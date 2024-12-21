@@ -4,8 +4,8 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <footer className="w-full bg-[#00512B] min-h-0">
-      <div className="grid grid-cols-4 lg:w-[1200px] mx-auto py-16">
-        <div className="justify-items-start logo">
+      <div className="grid lg:grid-cols-4 lg:gap-0 gap-9 lg:w-[1200px] mx-auto py-16 w-[330px] mx-auto">
+        <div className="lg:justify-items-start logo">
           <Image
             alt="MTHQ Logo"
             src="/image/logo.svg"
@@ -13,8 +13,10 @@ export default function Footer() {
             height={100}
           ></Image>
           <div className="lg:mt-16">
-            <h1 className="font-semibold text-white">Sosial Media</h1>
-            <div className="grid grid-cols-3 lg:w-[150px] mt-3">
+            <h1 className="font-semibold text-white lg:mt-0 mt-3">
+              Sosial Media
+            </h1>
+            <div className="grid grid-cols-3 lg:w-[150px] w-[130px] mt-3">
               <div>
                 <Link href="#">
                   <Image
@@ -78,7 +80,7 @@ export default function Footer() {
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63763.57199884247!2d105.9223547!3d-2.0014254!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e22e689f808e5a5%3A0x78f8b122ba26d64d!2sMA&#39;HAD%20TAHFIDZ%20HIDAYATUL%20QUR&#39;AN%20(MTHQ)%20PUDING%20BESAR!5e0!3m2!1sid!2sid!4v1699269064973!5m2!1sid!2sid"
             width="230"
             height="230"
-            className="ml-auto"
+            className="lg:ml-auto"
             style={{ border: 0 }}
             allowFullScreen={true}
             loading="lazy"

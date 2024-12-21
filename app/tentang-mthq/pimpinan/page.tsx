@@ -1,0 +1,43 @@
+import Asas from "@/components/beranda/asas";
+import VisiMisi from "@/components/beranda/visi-misi";
+import Welcome from "@/components/beranda/welcome";
+import Footer from "@/components/footer";
+import Navbar from "@/components/navbar";
+import NavbarMenu from "@/components/navbar-menu";
+import Image from "next/image";
+
+export default function Pimpinan() {
+  return (
+    <div className="w-full min-h-screen overflow-x-hidden">
+      <Navbar />
+      <NavbarMenu
+        title="Pimpinan MTHQ"
+        mainCategory="Tentang MTHQ"
+        currentPage="Pimpinan"
+      />
+      <div className="lg:px-36 lg:py-16 bg-[white]">
+        <div className=" w-[300px] mx-auto lg:w-full lg:flex lg:flex-row flex-col flex-nowrap lg:flex-wrap lg:gap-24 lg:items-center lg:justify-center mt-10">
+          <div>
+            <Image
+              alt="Pimpinan 1"
+              src="/image/pimpinan1.svg"
+              className="lg:w-[1128px] lg:h-[400px]"
+              width={300}
+              height={200}
+            />
+          </div>
+          <div>
+            <Image
+              alt="Pimpinan 2"
+              src="/image/pimpinan2.svg"
+              className="lg:w-[1128px] lg:h-[400px] lg:py-0 py-10"
+              width={300}
+              height={200}
+            />
+          </div>
+        </div>
+      </div>
+      <Footer />
+    </div>
+  );
+}
