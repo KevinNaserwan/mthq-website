@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <footer className="w-full bg-[#00512B] min-h-0">
-      <div className="grid lg:grid-cols-4 lg:gap-0 gap-9 lg:w-[1200px] mx-auto py-16 w-[330px] mx-auto">
+      <div className="grid lg:grid-cols-4 lg:gap-0 gap-9 lg:w-[1200px] py-16 w-[330px] mx-auto">
         <div className="lg:justify-items-start logo">
           <Image
             alt="MTHQ Logo"

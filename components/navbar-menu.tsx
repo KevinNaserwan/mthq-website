@@ -11,7 +11,7 @@ export default function NavbarMenu({
 }: NavbarMenuProps) {
   return (
     <div
-      className="relative w-screen bg-cover"
+      className="relative w-screen bg-cover mt-20"
       style={{ backgroundImage: "url('/image/navbar-menu.png')" }}
     >
       <div className="absolute inset-0 bg-[#00512B] opacity-80 z-10"></div>

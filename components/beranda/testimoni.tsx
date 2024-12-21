@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import CardTestimoni from "../card-testimoni";
+import Image from "next/image";
 
 interface TestimonyData {
   name: string;
@@ -115,7 +116,7 @@ export default function Testimoni() {
       >
         {/* Button Left */}
         <button onClick={handlePrev} className="absolute left-0 p-2 z-10">
-          <img
+          <Image
             src="/icon/left-arrow.svg"
             alt="Left Arrow"
             className="w-8 h-8 lg:w-12 lg:h-12"
@@ -150,7 +151,7 @@ export default function Testimoni() {
 
         {/* Button Right */}
         <button onClick={handleNext} className="absolute right-0 p-2 z-10">
-          <img
+          <Image
             src="/icon/right-arrow.svg"
             alt="Right Arrow"
             className="w-8 h-8 lg:w-12 lg:h-12"

@@ -15,7 +15,7 @@ export default function Jumbotron() {
   ];
 
   return (
-    <div className="relative w-screen h-[650px]">
+    <div className="relative w-screen h-[650px] mt-20">
       {/* Background Slider - z-index: 0 (default) */}
       <div className="absolute inset-0">
         <Swiper

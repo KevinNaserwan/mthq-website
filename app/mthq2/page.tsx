@@ -1,5 +1,3 @@
-import CardFasilitas from "@/components/card-fasilitas";
-import CardKeunggulan from "@/components/card-keunggulan";
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 import NavbarMenu from "@/components/navbar-menu";
@@ -10,7 +8,7 @@ export default function MTHQ2() {
     <div className="w-full min-h-screen overflow-x-hidden">
       <Navbar />
       <NavbarMenu title="MTHQ2" mainCategory="Beranda" currentPage="MTHQ2" />
-      <div className="lg:flex lg:flex-row lg:items-center lg:justify-center lg:px-36 lg:py-32 lg:bg-white">
+      <div className="lg:flex lg:flex-row lg:items-center lg:justify-center lg:px-36 lg:py-32 bg-white">
         <div className="lg:w-[60%]">
           <h1 className=" lg:font-semibold text-[#006C39] lg:text-[32px]">
             MTHQ 2
@@ -36,6 +34,12 @@ export default function MTHQ2() {
             height={276}
           />
         </div>
+      </div>
+      <div className=" bg-[#E6F0EB] w-full lg:px-36 lg:py-32">
+        <h1 className=" lg:font-semibold text-[#006C39] lg:text-[32px] text-center">
+          Program MTHQ 2
+        </h1>
+        <div></div>
       </div>
       <Footer />
     </div>

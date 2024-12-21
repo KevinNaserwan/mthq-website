@@ -1,5 +1,3 @@
-import CardFasilitas from "@/components/card-fasilitas";
-import CardKeunggulan from "@/components/card-keunggulan";
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 import NavbarMenu from "@/components/navbar-menu";

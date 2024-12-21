@@ -2,7 +2,6 @@ import CardKeunggulan from "@/components/card-keunggulan";
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 import NavbarMenu from "@/components/navbar-menu";
-import Image from "next/image";
 
 export default function keunggulan() {
   const keunggulanData = [

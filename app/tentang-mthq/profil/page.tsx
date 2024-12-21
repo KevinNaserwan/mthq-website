@@ -1,6 +1,5 @@
 import Asas from "@/components/beranda/asas";
 import VisiMisi from "@/components/beranda/visi-misi";
-import Welcome from "@/components/beranda/welcome";
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 import NavbarMenu from "@/components/navbar-menu";
@@ -21,12 +20,13 @@ export default function Profil() {
             Profil MTHQ
           </h1>
           <p className=" lg:font-medium text-black lg:text-[16px] lg:mt-4 lg:w-[90%] text-justify">
-            Ma'had Tahfidz Hidayatul Qur’an Bangka (MTHQ) adalah lembaga
-            pendidikan berbadan hukum yang berperan sebagai pesantren modern,
-            memadukan program tahfidz Al-Qur’an, pengajian kitab keagamaan,
-            pembiasaan berbahasa Arab dan Inggris, serta pendidikan formal. MTHQ
-            berlokasi di Jalan Raya Mentok-Pangkalpinang, Desa Puding Besar,
-            Kecamatan Puding Besar, Kabupaten Bangka, Provinsi Bangka Belitung
+            Ma&apos;had Tahfidz Hidayatul Qur&apos;an Bangka (MTHQ) adalah
+            lembaga pendidikan berbadan hukum yang berperan sebagai pesantren
+            modern, memadukan program tahfidz Al-Qur&apos;an, pengajian kitab
+            keagamaan, pembiasaan berbahasa Arab dan Inggris, serta pendidikan
+            formal. MTHQ berlokasi di Jalan Raya Mentok-Pangkalpinang, Desa
+            Puding Besar, Kecamatan Puding Besar, Kabupaten Bangka, Provinsi
+            Bangka Belitung
           </p>
           <p className=" lg:font-medium text-black lg:text-[16px] lg:mt-4 lg:w-[90%] text-justify">
             Lembaga ini didirikan pada 1 Mei 2013 di Malaysia oleh empat pendiri

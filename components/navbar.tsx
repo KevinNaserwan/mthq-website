@@ -14,6 +14,7 @@ type MenuItem = {
 
 export default function Navbar() {
   const [openMenu, setOpenMenu] = useState<string | null>(null);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
 
@@ -86,23 +87,17 @@ export default function Navbar() {
     link: string,
     dropdown?: { title: string; link: string }[]
   ) => {
-    // Special case for home page
     if (link === "/" && pathname === "/") return true;
-
-    // For other pages
     if (link && link !== "/" && pathname.startsWith(link)) return true;
-
-    // For dropdown items
     if (dropdown) {
       return dropdown.some((item) => pathname.startsWith(item.link));
     }
-
     return false;
   };
 
   return (
-    <div className="w-full bg-white min-h-0">
-      <div className="flex flex-row justify-between lg:w-[1200px] mx-auto py-3">
+    <div className="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
+      <div className="flex flex-row justify-between lg:w-[1200px] mx-auto py-3 lg:px-0 px-4">
         <div>
           <Image
             alt="MTHQ Logo"
@@ -111,7 +106,23 @@ export default function Navbar() {
             height={60}
           />
         </div>
-        <div className="flex flex-row items-center gap-7" ref={dropdownRef}>
+        <div className="flex flex-row items-center gap-7 lg:hidden">
+          <button
+            onClick={() => setIsMobileMenuOpen((prev) => !prev)}
+            className="text-black"
+          >
+            <Image
+              src="/icon/menu.svg"
+              alt="Menu Icon"
+              width={24}
+              height={24}
+            />
+          </button>
+        </div>
+        <div
+          className="lg:flex-row items-center gap-7 hidden lg:flex"
+          ref={dropdownRef}
+        >
           {menuItems.map(({ title, link, dropdown }) => {
             const active = isActive(link, dropdown);
             return (
@@ -125,13 +136,36 @@ export default function Navbar() {
                   hasDropdown={!!dropdown}
                 />
                 {dropdown && openMenu === title && (
-                  <DropdownMenu items={dropdown} />
+                  <DropdownMenu items={dropdown} isOpen={openMenu === title} />
                 )}
               </div>
             );
           })}
         </div>
       </div>
+
+      {isMobileMenuOpen && (
+        <div className="lg:hidden lg:gap-0 gap-5 flex flex-col bg-white shadow-lg p-4">
+          {menuItems.map(({ title, link, dropdown }) => {
+            const active = isActive(link, dropdown);
+            return (
+              <div key={title} className="relative">
+                <Menu
+                  title={title}
+                  link={link}
+                  isActive={active}
+                  isOpen={openMenu === title}
+                  onToggle={() => handleToggle(title)}
+                  hasDropdown={!!dropdown}
+                />
+                {dropdown && openMenu === title && (
+                  <DropdownMenu items={dropdown} isOpen={openMenu === title} />
+                )}
+              </div>
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 }

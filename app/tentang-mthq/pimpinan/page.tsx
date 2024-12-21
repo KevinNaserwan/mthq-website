@@ -1,6 +1,3 @@
-import Asas from "@/components/beranda/asas";
-import VisiMisi from "@/components/beranda/visi-misi";
-import Welcome from "@/components/beranda/welcome";
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 import NavbarMenu from "@/components/navbar-menu";
