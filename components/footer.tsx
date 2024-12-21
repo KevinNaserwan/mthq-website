@@ -52,7 +52,7 @@ export default function Footer() {
         </div>
         <div className="site-menu">
           <h1 className="font-semibold text-white">Site Menu</h1>
-          <div className=" grid grid-rows-6 lg:h-[216px] mt-4">
+          <div className=" grid grid-rows-6 lg:h-[216px] mt-4 text-white">
             <Link href="">Beranda</Link>
             <Link href="">Tentang MTHQ</Link>
             <Link href="">Program</Link>
@@ -64,15 +64,15 @@ export default function Footer() {
         <div className="alamat-kontak grid grid-rows-2">
           <div>
             <h1 className="font-semibold text-white">MTHQ Bangka</h1>
-            <p className=" mt-2">
+            <p className=" mt-2 text-white">
               Jalan Raya Mentok-Pangkalpinang, Puding Besar, Kec. Puding Besar,
               Kabupaten Bangka, Kepulauan Bangka Belitung 33179
             </p>
           </div>
           <div className=" mt-6">
             <h1 className="font-semibold text-white">Kontak</h1>
-            <p className=" mt-2">Telepon : ‪+62 877‑4918‑1562‬</p>
-            <p>Facebook : MTHQ Bangka</p>
+            <p className=" mt-2 text-white">Telepon : ‪+62 877‑4918‑1562‬</p>
+            <p className="text-white">Facebook : MTHQ Bangka</p>
           </div>
         </div>
         <div className="map">

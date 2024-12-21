@@ -22,8 +22,21 @@ const Fasilitas: React.FC = () => {
   ];
 
   const [activeIndex, setActiveIndex] = useState<number>(0);
+  const [isMobile, setIsMobile] = useState<boolean>(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const cardsToShow = isMobile ? 1 : 4;
   const totalSlides = facilities.length;
-  const cardsToShow = 4;
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -33,7 +46,7 @@ const Fasilitas: React.FC = () => {
     }, 5000);
 
     return () => clearInterval(interval);
-  }, [totalSlides]);
+  }, [totalSlides, cardsToShow]);
 
   const handleDotClick = (index: number): void => {
     if (index + cardsToShow <= totalSlides) {
@@ -52,8 +65,8 @@ const Fasilitas: React.FC = () => {
   };
 
   return (
-    <div className="lg:px-36 lg:py-32 bg-[#E6F0EB]">
-      <h1 className="text-[#006C39] font-bold text-center text-[32px]">
+    <div className="lg:px-36 lg:py-32 py-8 px-6 bg-[#E6F0EB]">
+      <h1 className="text-[#006C39] font-bold text-center lg:text-[32px] text-2xl">
         Fasilitas
       </h1>
 
@@ -78,16 +91,17 @@ const Fasilitas: React.FC = () => {
             className="flex transition-transform duration-500 ease-in-out"
             style={{
               transform: `translateX(-${activeIndex * (100 / cardsToShow)}%)`,
-              // width: `${(totalSlides * 100) / cardsToShow}%`,  // Removed this line
             }}
           >
             {facilities.map((facility) => (
               <div
                 key={facility.id}
-                className="w-full px-2"
+                className={`w-full ${isMobile ? "px-0" : "px-2"}`}
                 style={{ flex: `0 0 ${100 / cardsToShow}%` }}
               >
-                <CardFasilitas />
+                <div className="flex justify-center">
+                  <CardFasilitas title={facility.title} />
+                </div>
               </div>
             ))}
           </div>

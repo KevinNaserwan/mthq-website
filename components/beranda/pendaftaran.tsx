@@ -36,13 +36,13 @@ export default function Pendaftaran() {
 
   return (
     <div
-      className="relative w-screen py-32 bg-cover"
+      className="relative w-screen lg:py-32 py-8 bg-cover"
       style={{ backgroundImage: "url('/image/daftar.jpeg')" }}
     >
       <div className="absolute inset-0 bg-[#E6F0EBE5] z-10"></div>
-      <div className="grid grid-flow-row grid-cols-2 gap-16 lg:px-36 h-full z-20">
+      <div className="lg:grid lg:grid-flow-row lg:grid-cols-2 flex flex-col lg:gap-16 gap-6 lg:px-36 h-full z-20 px-6">
         <div className="flex flex-col items-start justify-center text-white z-20">
-          <h2 className="text-2xl lg:text-4xl font-semibold text-[#019A3C] lg:w-[600px] mt-2">
+          <h2 className="text-2xl lg:text-4xl font-semibold text-[#019A3C] lg:w-[600px] w-full mt-2">
             Pendaftaran Santri Baru 2025 Telah Dibuka!
           </h2>
           <p className="text-black font-medium mt-4 text-justify">

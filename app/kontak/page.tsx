@@ -20,13 +20,13 @@ export default function Kontak() {
         mainCategory="Beranda"
         currentPage="Kontak"
       />
-      <div className="lg:px-36 lg:py-16 lg:bg-white">
-        <h1 className="text-black font-medium text-center text-[16px]">
+      <div className="lg:px-36 lg:py-16 py-6 px-7 bg-white">
+        <h1 className="text-black lg:font-medium font-semibold lg:text-center text-start text-[16px]">
           Hubungi MTHQ untuk informasi lebih lanjut!
         </h1>
-        <div className="mt-12">
-          <div className="flex flex-row justify-center">
-            <div className="rounded-l-lg bg-[#E6F0EB] flex flex-col gap-5 py-5 px-10 shadow-2xl">
+        <div className="lg:mt-12 mt-6">
+          <div className="flex lg:flex-row flex-col justify-center">
+            <div className="lg:rounded-l-lg rounded-t-lg bg-[#E6F0EB] flex flex-col gap-5 py-5 px-10 shadow-2xl">
               <h1 className="font-bold text-2xl text-[#006C39]">
                 Detail Kontak
               </h1>
@@ -104,7 +104,7 @@ export default function Kontak() {
                 height={356}
               />
               <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
-                <button className="bg-[#25D366] rounded-full flex-row items-center gap-3 inline-flex p-3 absolute bottom-10 right-12">
+                <button className="bg-[#25D366] rounded-full flex-row items-center gap-3 inline-flex p-3 absolute bottom-10 lg:right-12 right-8">
                   <h1 className="font-bold text-base">Hubungi MTHQ</h1>
                   <Image
                     alt="send"
@@ -116,7 +116,7 @@ export default function Kontak() {
               </a>
             </div>
           </div>
-          <div className=" flex flex-row justify-center items-center bg-[#E6F0EB] rounded-lg mt-20">
+          <div className=" flex lg:flex-row flex-col lg:p-0 p-6 mb-6 lg:mb-0 lg:gap-0 gap-6 justify-center items-center bg-[#E6F0EB] rounded-lg lg:mt-20 mt-10">
             <Image
               alt=""
               src="/image/hand.svg"
@@ -125,10 +125,10 @@ export default function Kontak() {
               height={200}
             />
             <div className=" flex flex-col lg:w-[50%]">
-              <h1 className=" font-bold text-2xl text-[#006C39]">
+              <h1 className=" font-bold lg:text-2xl text-xl text-[#006C39]">
                 MTHQ Mobile “Kemudahan Akses Informasi & Prestasi Siswa”
               </h1>
-              <p className=" text-black font-medium text-base">
+              <p className=" text-black font-medium text-base lg:mt-5 mt-3">
                 Akses cepat informasi murid, laporan tahfidz, pembayaran,
                 berita, absensi, dan transaksi dalam satu aplikasi.
               </p>
@@ -141,8 +141,8 @@ export default function Kontak() {
                 alt=""
                 src="/image/playstore.svg"
                 className=" lg:w-[200px] lg:h-[200px]"
-                width={200}
-                height={200}
+                width={300}
+                height={300}
               />
             </Link>
           </div>

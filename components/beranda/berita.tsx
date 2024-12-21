@@ -2,11 +2,11 @@ import CardBerita from "../card-berita";
 
 export default function Berita() {
   return (
-    <div className="lg:px-36 lg:py-32 lg:bg-white">
-      <h1 className="text-[#006C39] font-bold text-center text-[32px]">
+    <div className="lg:px-36 lg:py-32 px-6 py-8 bg-white">
+      <h1 className="text-[#006C39] font-bold text-center lg:text-[32px] text-2xl">
         Berita dan Artikel
       </h1>
-      <div className="grid grid-flow-row grid-cols-3 items-center gap-10 mt-16">
+      <div className="lg:grid lg:grid-flow-row lg:grid-cols-3 flex flex-col items-center gap-10 lg:mt-16 mt-8">
         <CardBerita />
         <CardBerita />
         <CardBerita />

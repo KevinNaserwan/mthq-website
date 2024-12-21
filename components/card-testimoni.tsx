@@ -7,7 +7,7 @@ export default function CardTestimoni({
   testimony,
 }: CardTestimoniProps) {
   return (
-    <div className="relative flex flex-col lg:w-[300px] lg:h-[350px] justify-start bg-white items-center shadow-2xl p-10 rounded-lg">
+    <div className="relative flex flex-col lg:w-[300px] lg:h-[350px] h-[350px] w-[250px] justify-start bg-white items-center lg:shadow-2xl shadow-xl lg:p-10 p-8 lg:m-0 rounded-lg">
       <Image
         alt="image testimoni"
         src={image}

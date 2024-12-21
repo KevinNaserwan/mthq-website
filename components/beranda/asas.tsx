@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Asas() {
   return (
-    <div className="lg:px-36 lg:py-32 bg-[#E6F0EB] grid grid-flow-row grid-cols-3 gap-10">
+    <div className="lg:px-36 lg:py-32 py-8 px-6 bg-[#E6F0EB] lg:grid lg:rid-flow-row lg:grid-cols-3 flex flex-col gap-10">
       <div className=" flex flex-col justify-center bg-white items-center gap-4 p-5 rounded-lg">
         <Image src="/icon/profil/1.svg" alt="asas" width={50} height={50} />
         <h1 className=" font-bold text-[32px] text-black">Asas</h1>

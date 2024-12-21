@@ -24,7 +24,7 @@ const Accordion: React.FC<AccordionProps> = ({
   };
 
   return (
-    <div className="w-[500px] flex-col bg-white mt-5 py-4 px-5 rounded-lg transition-all duration-300">
+    <div className="lg:w-[500px] w-[330px] flex-col bg-white mt-5 py-4 px-5 rounded-lg transition-all duration-300">
       <div
         className="flex flex-row items-center justify-between gap-20 cursor-pointer"
         onClick={toggleAccordion}

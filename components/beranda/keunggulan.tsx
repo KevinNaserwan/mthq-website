@@ -41,12 +41,12 @@ export default function Keunggulan() {
   ];
 
   return (
-    <div className="lg:px-36 lg:py-32 lg:bg-white">
-      <h1 className="text-[#006C39] font-bold text-center text-[32px]">
+    <div className="lg:px-36 lg:py-32 py-8 px-6 bg-white">
+      <h1 className="text-[#006C39] font-bold text-center lg:text-[32px] text-2xl">
         Keunggulan MTHQ
       </h1>
       <div className=" mt-12">
-        <div className=" grid grid-flow-row gap-14 grid-cols-3">
+        <div className=" lg:grid lg:grid-flow-row lg:gap-14 lg:grid-cols-3 flex flex-col gap-6">
           {keunggulanData.map((item, index) => (
             <CardKeunggulan key={index} icon={item.icon} text={item.text} />
           ))}

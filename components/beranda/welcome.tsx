@@ -1,11 +1,11 @@
 export default function Welcome() {
   return (
-    <div className="lg:flex lg:flex-row lg:items-center lg:justify-center lg:px-36 lg:py-32 lg:bg-white">
-      <div>
-        <h1 className=" lg:font-semibold text-[#006C39] lg:text-[32px]">
+    <div className="flex lg:flex-row flex-col-reverse lg:items-center lg:justify-center lg:px-36 lg:py-32 bg-white py-24">
+      <div className=" px-6">
+        <h1 className=" font-semibold text-[#006C39] lg:text-[32px] text-2xl mt-4">
           Selamat Datang
         </h1>
-        <p className=" lg:font-medium text-black lg:text-[16px] lg:mt-4 lg:w-[90%] text-justify">
+        <p className=" font-medium text-black text-[16px] mt-4 lg:w-[90%] text-justify">
           Ma&apos;had Tahfidz Hidayatul Qur’an Bangka (MTHQ) adalah lembaga
           pendidikan berbadan hukum yang berperan sebagai pesantren modern,
           memadukan program tahfidz Al-Qur’an, pengajian kitab keagamaan,
@@ -13,7 +13,7 @@ export default function Welcome() {
           berlokasi di Jalan Raya Mentok-Pangkalpinang, Desa Puding Besar,
           Kecamatan Puding Besar, Kabupaten Bangka, Provinsi Bangka Belitung.
         </p>
-        <p className=" lg:font-medium text-black lg:text-[16px] lg:mt-4 lg:w-[90%] text-justify">
+        <p className=" font-medium text-black text-[16px] mt-4 lg:w-[90%] text-justify">
           Lembaga ini didirikan pada 1 Mei 2013 di Malaysia oleh empat pendiri
           dengan visi dan komitmen yang sama. Dengan semangat pendidikan Islam
           yang progresif, MTHQ bertujuan mencetak generasi berakhlak mulia,
@@ -23,7 +23,7 @@ export default function Welcome() {
       </div>
       <div className="">
         <iframe
-          className="lg:w-[500px] lg:h-[315px] w-full h-[200px] border-none"
+          className="lg:w-[500px] lg:h-[315px] w-[330px] h-[200px] border-none mx-auto"
           src="https://www.youtube.com/embed/77q5jiZkuJI"
           title="YouTube video player"
           frameBorder="0"

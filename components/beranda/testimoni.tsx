@@ -14,6 +14,7 @@ interface TestimonyData {
 export default function Testimoni() {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [isHovered, setIsHovered] = useState<boolean>(false);
+  const [isMobile, setIsMobile] = useState<boolean>(false);
 
   const testimonies: TestimonyData[] = [
     {
@@ -60,7 +61,20 @@ export default function Testimoni() {
     },
   ];
 
-  const itemsPerSlide = 3;
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    handleResize(); // Check on mount
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const itemsPerSlide = isMobile ? 1 : 3; // Mobile: 1 card, Desktop: 3 cards
   const totalSlides = Math.ceil(testimonies.length / itemsPerSlide);
 
   // Auto-slide effect
@@ -95,13 +109,13 @@ export default function Testimoni() {
   };
 
   return (
-    <div className="lg:px-36 lg:py-32 lg:bg-white overflow-hidden">
-      <h1 className="text-[#006C39] font-bold text-center text-[32px]">
+    <div className="lg:px-36 lg:py-32 py-8 px-6 bg-white overflow-hidden">
+      <h1 className="text-[#006C39] font-bold text-center lg:text-[32px text-2xl">
         Testimoni
       </h1>
-      <div className="lg:bg-[#E6F0EB] mt-12">
+      <div className="lg:bg-[#E6F0EB] lg:mt-12">
         <iframe
-          className="lg:w-[480px] lg:h-[360px] py-12 w-full h-[200px] border-none mx-auto"
+          className="lg:w-[480px] lg:h-[360px] py-8 w-[330px] h-[300px] border-none mx-auto"
           src="https://www.youtube.com/embed/77q5jiZkuJI"
           title="YouTube video player"
           frameBorder="0"
@@ -110,7 +124,7 @@ export default function Testimoni() {
         ></iframe>
       </div>
       <div
-        className="mt-36 flex items-center relative"
+        className="lg:mt-36 mt-6 flex items-center relative"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
@@ -119,12 +133,14 @@ export default function Testimoni() {
           <Image
             src="/icon/left-arrow.svg"
             alt="Left Arrow"
+            width={40}
+            height={40}
             className="w-8 h-8 lg:w-12 lg:h-12"
           />
         </button>
 
         {/* Slider Content */}
-        <div className="flex-1 overflow-hidden">
+        <div className="lg:flex-1 overflow-hidden">
           <div
             className="flex transition-transform duration-500 w-full"
             style={{
@@ -134,7 +150,9 @@ export default function Testimoni() {
             {Array.from({ length: totalSlides }).map((_, slideIndex) => (
               <div
                 key={slideIndex}
-                className="flex justify-center gap-5 min-w-full my-12"
+                className={`flex justify-center lg:gap-5 lg:min-w-full w-[300px] lg:mx-0 mx-12 my-12 ${
+                  isMobile ? "" : ""
+                }`}
               >
                 {testimonies
                   .slice(
@@ -154,6 +172,8 @@ export default function Testimoni() {
           <Image
             src="/icon/right-arrow.svg"
             alt="Right Arrow"
+            width={40}
+            height={40}
             className="w-8 h-8 lg:w-12 lg:h-12"
           />
         </button>
@@ -162,7 +182,7 @@ export default function Testimoni() {
         {Array.from({ length: totalSlides }).map((_, index) => (
           <div
             key={index}
-            className={`lg:w-[40px] lg:h-[10px] rounded-full ${
+            className={`w-[40px] h-[10px] rounded-full ${
               currentIndex === index ? "bg-[#006C39]" : "bg-[#BFBFBF]"
             }`}
           ></div>

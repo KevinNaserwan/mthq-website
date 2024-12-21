@@ -1,4 +1,3 @@
-import CardFasilitas from "@/components/card-fasilitas";
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 import NavbarMenu from "@/components/navbar-menu";
@@ -22,31 +21,7 @@ export default function ProgramWirausaha() {
           mengembangkan diri dengan optimal.
         </h1>
         <div className=" mt-12">
-          <div className=" flex flex-row flex-wrap gap-16 grid-cols-4 justify-center items-center">
-            <CardFasilitas />
-            <CardFasilitas />
-            <CardFasilitas />
-            <CardFasilitas />
-            <CardFasilitas />
-            <CardFasilitas />
-            <CardFasilitas />
-            <CardFasilitas />
-            <CardFasilitas />
-            <CardFasilitas />
-            <CardFasilitas />
-            <CardFasilitas />
-            <CardFasilitas />
-            <CardFasilitas />
-            <CardFasilitas />
-            <CardFasilitas />
-            <CardFasilitas />
-            <CardFasilitas />
-            <CardFasilitas />
-            <CardFasilitas />
-            <CardFasilitas />
-            <CardFasilitas />
-            <CardFasilitas />
-          </div>
+          <div className=" flex flex-row flex-wrap gap-16 grid-cols-4 justify-center items-center"></div>
         </div>
       </div>
       <Footer />
