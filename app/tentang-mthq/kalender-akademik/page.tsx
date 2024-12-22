@@ -22,7 +22,7 @@ export default function KalenderAkademik() {
             <div>
               <Image
                 alt="Kalender 1"
-                src="/image/kalender/1.svg"
+                src="/image/kalender/1.png"
                 className="lg:w-[240px] lg:h-[280px]"
                 width={300}
                 height={200}
@@ -31,7 +31,7 @@ export default function KalenderAkademik() {
             <div>
               <Image
                 alt="Kalender 2"
-                src="/image/kalender/2.svg"
+                src="/image/kalender/2.png"
                 className="lg:w-[240px] lg:h-[280px] lg:py-0 py-10"
                 width={300}
                 height={200}
@@ -40,7 +40,7 @@ export default function KalenderAkademik() {
             <div>
               <Image
                 alt="Kalender 3"
-                src="/image/kalender/3.svg"
+                src="/image/kalender/3.png"
                 className="lg:w-[240px] lg:h-[280px]"
                 width={300}
                 height={200}
@@ -49,7 +49,7 @@ export default function KalenderAkademik() {
             <div>
               <Image
                 alt="Kalender 4"
-                src="/image/kalender/4.svg"
+                src="/image/kalender/4.png"
                 className="lg:w-[240px] lg:h-[280px] lg:py-0 py-10"
                 width={300}
                 height={200}
@@ -58,7 +58,7 @@ export default function KalenderAkademik() {
             <div>
               <Image
                 alt="Kalender 5"
-                src="/image/kalender/5.svg"
+                src="/image/kalender/5.png"
                 className="lg:w-[240px] lg:h-[280px]"
                 width={300}
                 height={200}
@@ -67,7 +67,7 @@ export default function KalenderAkademik() {
             <div>
               <Image
                 alt="Kalender 6"
-                src="/image/kalender/6.svg"
+                src="/image/kalender/6.png"
                 className="lg:w-[240px] lg:h-[280px] lg:py-0 py-10"
                 width={300}
                 height={200}
@@ -76,7 +76,7 @@ export default function KalenderAkademik() {
             <div>
               <Image
                 alt="Kalender 7"
-                src="/image/kalender/7.svg"
+                src="/image/kalender/7.png"
                 className="lg:w-[240px] lg:h-[280px]"
                 width={300}
                 height={200}
@@ -85,7 +85,7 @@ export default function KalenderAkademik() {
             <div>
               <Image
                 alt="Kalender 8"
-                src="/image/kalender/8.svg"
+                src="/image/kalender/8.png"
                 className="lg:w-[240px] lg:h-[280px] lg:py-0 py-10"
                 width={300}
                 height={200}
@@ -94,7 +94,7 @@ export default function KalenderAkademik() {
             <div>
               <Image
                 alt="Kalender 9"
-                src="/image/kalender/9.svg"
+                src="/image/kalender/9.png"
                 className="lg:w-[240px] lg:h-[280px]"
                 width={300}
                 height={200}
@@ -103,7 +103,7 @@ export default function KalenderAkademik() {
             <div>
               <Image
                 alt="Kalender 10"
-                src="/image/kalender/10.svg"
+                src="/image/kalender/10.png"
                 className="lg:w-[240px] lg:h-[280px] lg:py-0 py-10"
                 width={300}
                 height={200}
@@ -112,7 +112,7 @@ export default function KalenderAkademik() {
             <div>
               <Image
                 alt="Kalender 11"
-                src="/image/kalender/11.svg"
+                src="/image/kalender/11.png"
                 className="lg:w-[240px] lg:h-[280px]"
                 width={300}
                 height={200}
@@ -121,7 +121,7 @@ export default function KalenderAkademik() {
             <div>
               <Image
                 alt="Kalender 12"
-                src="/image/kalender/12.svg"
+                src="/image/kalender/12.png"
                 className="lg:w-[240px] lg:h-[280px] lg:py-0 py-10"
                 width={300}
                 height={200}
