@@ -17,8 +17,8 @@ export default function Pimpinan() {
           <div>
             <Image
               alt="Pimpinan 1"
-              src="/image/pimpinan1.svg"
-              className="lg:w-[1128px] lg:h-[400px]"
+              src="/image/pimpinan1.png"
+              className="lg:w-[1128px] lg:h-[400px] lg:block hidden"
               width={300}
               height={200}
             />
@@ -26,8 +26,26 @@ export default function Pimpinan() {
           <div>
             <Image
               alt="Pimpinan 2"
-              src="/image/pimpinan2.svg"
-              className="lg:w-[1128px] lg:h-[400px] lg:py-0 py-10"
+              src="/image/pimpinan2.png"
+              className="lg:w-[1128px] lg:h-[400px] lg:py-0 py-10 lg:block hidden"
+              width={300}
+              height={200}
+            />
+          </div>
+          <div>
+            <Image
+              alt="Pimpinan 1"
+              src="/image/pimpinan1-mobile.png"
+              className="lg:w-[1128px] lg:h-[400px] lg:hidden block"
+              width={300}
+              height={200}
+            />
+          </div>
+          <div>
+            <Image
+              alt="Pimpinan 2"
+              src="/image/pimpinan2-mobile.png"
+              className="lg:w-[1128px] lg:h-[400px] lg:py-0 py-10 lg:hidden block"
               width={300}
               height={200}
             />

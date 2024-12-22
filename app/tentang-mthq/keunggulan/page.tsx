@@ -50,7 +50,7 @@ export default function keunggulan() {
         mainCategory="Tentang MTHQ"
         currentPage="Keunggulan"
       />
-      <div className="lg:px-36 lg:py-24 lg:bg-white">
+      <div className="lg:px-36 lg:py-24 lg:bg-white px-6 py-8">
         <h1 className="text-black font-normal text-justify text-[16px]">
           MTHQ hadir sebagai pusat pendidikan terpadu yang menekankan karakter
           islami dan kompetensi tinggi, membentuk santri yang siap menghadapi
@@ -60,7 +60,7 @@ export default function keunggulan() {
           kehidupan.
         </h1>
         <div className=" mt-12">
-          <div className=" grid grid-flow-row gap-14 grid-cols-3">
+          <div className=" lg:grid lg:grid-flow-row lg:gap-14 gap-8 flex flex-col lg:grid-cols-3">
             {keunggulanData.map((item, index) => (
               <CardKeunggulan key={index} icon={item.icon} text={item.text} />
             ))}

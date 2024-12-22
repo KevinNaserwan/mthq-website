@@ -26,7 +26,7 @@ export default function Kontak() {
         </h1>
         <div className="lg:mt-12 mt-6">
           <div className="flex lg:flex-row flex-col justify-center">
-            <div className="lg:rounded-l-lg rounded-t-lg bg-[#E6F0EB] flex flex-col gap-5 py-5 px-10 shadow-2xl">
+            <div className=" lg:rounded-tl-lg lg:rounded-bl-lg lg:rounded-tr-none  rounded-t-lg bg-[#E6F0EB] flex flex-col gap-5 py-5 px-10 drop-shadow-lg">
               <h1 className="font-bold text-2xl text-[#006C39]">
                 Detail Kontak
               </h1>
@@ -95,17 +95,19 @@ export default function Kontak() {
                 </div>
               </div>
             </div>
-            <div className="relative rounded-r-lg bg-white shadow-2xl">
+            <div className="relative lg:rounded-tr-lg lg:rounded-br-lg lg:rounded-bl-none rounded-b-lg  bg-white shadow-2xl">
               <Image
                 alt="Whatsapp"
                 src="/image/wa-kontak.svg"
-                className="lg:w-[382px] lg:h-[356px]"
+                className="lg:w-[382px] lg:h-[356px] w-[350px] h-[320px]"
                 width={382}
                 height={356}
               />
               <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
-                <button className="bg-[#25D366] rounded-full flex-row items-center gap-3 inline-flex p-3 absolute bottom-10 lg:right-12 right-8">
-                  <h1 className="font-bold text-base">Hubungi MTHQ</h1>
+                <button className="bg-[#25D366] rounded-full flex-row items-center gap-3 inline-flex p-3 px-5 absolute bottom-10 lg:right-12 right-8">
+                  <h1 className="font-bold text-base text-white">
+                    Hubungi MTHQ
+                  </h1>
                   <Image
                     alt="send"
                     src="/icon/send.svg"
