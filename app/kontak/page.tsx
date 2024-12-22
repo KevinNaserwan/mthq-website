@@ -20,7 +20,7 @@ export default function Kontak() {
         mainCategory="Beranda"
         currentPage="Kontak"
       />
-      <div className="lg:px-36 lg:py-16 py-6 px-7 bg-white">
+      <div className="llg:w-[1200px] mx-auto lg:py-16 py-6 px-7 bg-white">
         <h1 className="text-black lg:font-medium font-semibold lg:text-center text-start text-[16px]">
           Hubungi MTHQ untuk informasi lebih lanjut!
         </h1>
@@ -118,7 +118,7 @@ export default function Kontak() {
               </a>
             </div>
           </div>
-          <div className=" flex lg:flex-row flex-col lg:p-0 p-6 mb-6 lg:mb-0 lg:gap-0 gap-6 justify-center items-center bg-[#E6F0EB] rounded-lg lg:mt-20 mt-10">
+          <div className=" lg:w-[1200px] mx-auto  flex lg:flex-row flex-col lg:p-0 p-6 mb-6 lg:mb-0 lg:gap-0 gap-6 justify-center items-center bg-[#E6F0EB] rounded-lg lg:mt-20 mt-10">
             <Image
               alt=""
               src="/image/hand.svg"

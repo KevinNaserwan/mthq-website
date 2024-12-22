@@ -40,7 +40,7 @@ export default function Jumbotron() {
       <div className="absolute inset-0 bg-black opacity-70 z-10"></div>
 
       {/* Content - z-index: 20 */}
-      <div className="absolute inset-0 flex flex-col items-start justify-center lg:px-36 text-white z-20">
+      <div className="absolute inset-0 flex flex-col items-start lg:w-[1200px] mx-auto justify-center text-white z-20">
         <h1 className="text-4xl lg:text-5xl font-semibold px-6 mt-24">MTHQ</h1>
         <h2 className="text-2xl lg:text-4xl font-semibold text-[#019A3C] mt-2 px-6">
           Ma&apos;had Tahﬁdz Hidayatul Qur&apos;an

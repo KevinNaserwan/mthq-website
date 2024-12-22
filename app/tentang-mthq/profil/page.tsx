@@ -14,7 +14,7 @@ export default function Profil() {
         mainCategory="Tentang MTHQ"
         currentPage="Profil"
       />
-      <div className="lg:flex lg:flex-row lg:items-center lg:justify-center lg:px-36 lg:py-32 lg:bg-white px-6 py-8">
+      <div className="lg:flex lg:flex-row lg:items-center lg:justify-center lg:w-[1200px] mx-auto lg:py-32 bg-white px-6 py-8">
         <div className="lg:w-[60%]">
           <h1 className=" font-semibold text-[#006C39] lg:text-[32px] text-2xl">
             Profil MTHQ
@@ -64,42 +64,44 @@ export default function Profil() {
       <Asas />
       <VisiMisi />
       <div className="lg:px-36 lg:py-32 px-6 py-8 bg-[#E6F0EB]  ">
-        <div className=" flex lg:flex-row flex-col justify-around lg:gap-0 gap-6 items-center">
-          <div>
-            <Image
-              src="/image/motto.png"
-              className="lg:w-[200px] lg:h-[214px] w-[180px] h-[190px]"
-              alt="image"
-              width={300}
-              height={250}
-            />
-          </div>
-          <div>
-            <Image
-              src="/image/motto-panca.png"
-              className="lg:w-[550px] lg:h-[250px] hidden lg:block"
-              alt="image"
-              width={300}
-              height={250}
-            />
-          </div>
-          <div>
-            <Image
-              src="/image/motto-panca-mobile.png"
-              className="lg:w-[550px] lg:h-[250px] lg:hidden block"
-              alt="image"
-              width={300}
-              height={250}
-            />
-          </div>
-          <div>
-            <Image
-              src="/image/panca-jiwa.png"
-              className="lg:w-[250px] lg:h-[250px] w-[180px] h-[190px]"
-              alt="image"
-              width={300}
-              height={250}
-            />
+        <div className="lg:w-[1200px] mx-auto ">
+          <div className=" flex lg:flex-row flex-col justify-around lg:gap-0 gap-6 items-center">
+            <div>
+              <Image
+                src="/image/motto.png"
+                className="lg:w-[200px] lg:h-[214px] w-[180px] h-[190px]"
+                alt="image"
+                width={300}
+                height={250}
+              />
+            </div>
+            <div>
+              <Image
+                src="/image/motto-panca.png"
+                className="lg:w-[550px] lg:h-[250px] hidden lg:block"
+                alt="image"
+                width={300}
+                height={250}
+              />
+            </div>
+            <div>
+              <Image
+                src="/image/motto-panca-mobile.png"
+                className="lg:w-[550px] lg:h-[250px] lg:hidden block"
+                alt="image"
+                width={300}
+                height={250}
+              />
+            </div>
+            <div>
+              <Image
+                src="/image/panca-jiwa.png"
+                className="lg:w-[250px] lg:h-[250px] w-[180px] h-[190px]"
+                alt="image"
+                width={300}
+                height={250}
+              />
+            </div>
           </div>
         </div>
       </div>

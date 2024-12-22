@@ -2,7 +2,7 @@ import CardBerita from "../card-berita";
 
 export default function Berita() {
   return (
-    <div className="lg:px-36 lg:py-32 px-6 py-8 bg-white">
+    <div className="lg:w-[1200px] mx-auto lg:py-32 px-6 py-8 bg-white">
       <h1 className="text-[#006C39] font-bold text-center lg:text-[32px] text-2xl">
         Berita dan Artikel
       </h1>

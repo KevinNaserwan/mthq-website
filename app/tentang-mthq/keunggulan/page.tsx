@@ -50,7 +50,7 @@ export default function keunggulan() {
         mainCategory="Tentang MTHQ"
         currentPage="Keunggulan"
       />
-      <div className="lg:px-36 lg:py-24 lg:bg-white px-6 py-8">
+      <div className="lg:w-[1200px] mx-auto lg:py-24 lg:bg-white px-6 py-8">
         <h1 className="text-black font-normal text-justify text-[16px]">
           MTHQ hadir sebagai pusat pendidikan terpadu yang menekankan karakter
           islami dan kompetensi tinggi, membentuk santri yang siap menghadapi

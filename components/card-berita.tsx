@@ -3,7 +3,7 @@ import Button from "./button";
 
 export default function CardBerita() {
   return (
-    <div className="w-[350px] h-[450px] relative shadow-lg rounded-lg">
+    <div className="w-[350px] h-[450px] relative shadow-lg rounded-lg mx-auto">
       <Image
         src="/image/jumbotron/2.jpeg"
         alt="image"

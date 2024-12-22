@@ -35,7 +35,7 @@ export default function MTHQ2() {
     <div className="w-full min-h-screen overflow-x-hidden">
       <Navbar />
       <NavbarMenu title="MTHQ2" mainCategory="Beranda" currentPage="MTHQ2" />
-      <div className="lg:flex lg:flex-row lg:items-center lg:justify-center lg:px-36 lg:py-32 px-6 py-8 bg-white">
+      <div className="lg:flex lg:flex-row lg:items-center lg:justify-center lg:w-[1200px] mx-auto lg:py-32 px-6 py-8 bg-white">
         <div className="lg:w-[60%]">
           <h1 className=" font-semibold text-[#006C39] lg:text-[32px] text-2xl ">
             MTHQ 2
@@ -70,17 +70,19 @@ export default function MTHQ2() {
           mendalam.
         </p>
       </div>
-      <div className=" bg-[#E6F0EB] w-full lg:px-36 lg:py-32 px-6 py-8">
-        <h1 className=" font-semibold text-[#006C39] lg:text-[32px] text-2xl text-center">
-          Program MTHQ 2
-        </h1>
-        <div className=" lg:flex-row justify-center flex flex-col items-center lg:items-stretch gap-6 mt-12">
-          {keunggulanData.map((item, index) => (
-            <CardProgram key={index} icon={item.icon} text={item.text} />
-          ))}
+      <div className=" bg-[#E6F0EB] w-full lg:py-32 px-6 py-8">
+        <div className="lg:w-[1200px] mx-auto">
+          <h1 className=" font-semibold text-[#006C39] lg:text-[32px] text-2xl text-center">
+            Program MTHQ 2
+          </h1>
+          <div className=" lg:flex-row justify-center flex flex-col items-center lg:items-stretch gap-6 mt-12">
+            {keunggulanData.map((item, index) => (
+              <CardProgram key={index} icon={item.icon} text={item.text} />
+            ))}
+          </div>
         </div>
       </div>
-      <div className=" bg-white lg:px-36 lg:py-32 flex flex-col gap-20 px-6 py-8">
+      <div className=" bg-white lg:w-[1200px] mx-auto lg:py-32 flex flex-col gap-20 px-6 py-8">
         <div className=" flex lg:flex-row flex-col items-center justify-between lg:gap-0 gap-8">
           <div className=" flex flex-col justify-start">
             <div className=" flex flex-row items-center gap-4">
@@ -129,28 +131,30 @@ export default function MTHQ2() {
         </div>
       </div>
       <div className="bg-[#E6F0EB] lg:px-36 lg:py-32 flex flex-col gap-10 px-6 py-8">
-        <h1 className="lg:text-left font-bold text-[#006C39] lg:text-[32px text-2xl text-center ">
-          Jadwal Harian MTHQ 2
-        </h1>
-        <div className=" flex lg:flex-row flex-col lg:gap-0 gap-10 items-center justify-between">
-          <Image
-            alt="jadwal-1"
-            src="/image/jadwal-mthq2-1.png"
-            width={364}
-            height={300}
-          />
-          <Image
-            alt="jadwal-1"
-            src="/image/jadwal.png"
-            width={200}
-            height={310}
-          />
-          <Image
-            alt="jadwal-1"
-            src="/image/jadwal-mthq2-2.png"
-            width={364}
-            height={300}
-          />
+        <div className="lg:w-[1200px] mx-auto ">
+          <h1 className="lg:text-left font-bold text-[#006C39] lg:text-[32px text-2xl text-center ">
+            Jadwal Harian MTHQ 2
+          </h1>
+          <div className=" flex lg:flex-row flex-col lg:gap-0 gap-10 items-center justify-between">
+            <Image
+              alt="jadwal-1"
+              src="/image/jadwal-mthq2-1.png"
+              width={364}
+              height={300}
+            />
+            <Image
+              alt="jadwal-1"
+              src="/image/jadwal.png"
+              width={200}
+              height={310}
+            />
+            <Image
+              alt="jadwal-1"
+              src="/image/jadwal-mthq2-2.png"
+              width={364}
+              height={300}
+            />
+          </div>
         </div>
       </div>
       <div className="map">

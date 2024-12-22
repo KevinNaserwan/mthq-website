@@ -40,7 +40,7 @@ export default function Pendaftaran() {
       style={{ backgroundImage: "url('/image/daftar.jpeg')" }}
     >
       <div className="absolute inset-0 bg-[#E6F0EBE5] z-10"></div>
-      <div className="lg:grid lg:grid-flow-row lg:grid-cols-2 flex flex-col lg:gap-16 gap-6 lg:px-36 h-full z-20 px-6">
+      <div className="lg:grid lg:grid-flow-row lg:grid-cols-2 flex flex-col lg:gap-16 gap-6 lg:w-[1200px] mx-auto h-full z-20 px-6">
         <div className="flex flex-col items-start justify-center text-white z-20">
           <h2 className="text-2xl lg:text-4xl font-semibold text-[#019A3C] lg:w-[600px] w-full mt-2">
             Pendaftaran Santri Baru 2025 Telah Dibuka!

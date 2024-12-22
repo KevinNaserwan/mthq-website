@@ -1,6 +1,6 @@
 export default function Welcome() {
   return (
-    <div className="flex lg:flex-row flex-col-reverse lg:items-center lg:justify-center lg:px-36 lg:py-32 bg-white py-24">
+    <div className="flex lg:flex-row flex-col-reverse lg:items-center lg:justify-center lg:w-[1200px] mx-auto lg:py-32 bg-white py-24">
       <div className=" px-6">
         <h1 className=" font-semibold text-[#006C39] lg:text-[32px] text-2xl mt-4">
           Selamat Datang

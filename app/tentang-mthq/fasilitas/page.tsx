@@ -11,7 +11,7 @@ export default function Fasilitas() {
         mainCategory="Tentang MTHQ"
         currentPage="Fasilitas"
       />
-      <div className="lg:px-36 lg:py-24 lg:bg-white px-6 py-8">
+      <div className="lg:w-[1200px] mx-auto lg:py-24 lg:bg-white px-6 py-8">
         <h1 className="text-black font-normal text-justify text-[16px]">
           MTHQ menyediakan fasilitas lengkap untuk mendukung perkembangan
           santri, mulai dari masjid, ruang kelas, perpustakaan, laboratorium

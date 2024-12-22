@@ -109,8 +109,8 @@ export default function Testimoni() {
   };
 
   return (
-    <div className="lg:px-36 lg:py-32 py-8 px-6 bg-white overflow-hidden">
-      <h1 className="text-[#006C39] font-bold text-center lg:text-[32px text-2xl">
+    <div className="lg:w-[1200px] mx-auto lg:py-32 py-8 px-6 bg-white overflow-hidden">
+      <h1 className="text-[#006C39] font-bold text-center lg:text-[32px] text-2xl">
         Testimoni
       </h1>
       <div className="lg:bg-[#E6F0EB] lg:mt-12">

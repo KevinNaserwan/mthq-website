@@ -66,75 +66,77 @@ const Fasilitas: React.FC = () => {
 
   return (
     <div className="lg:px-36 lg:py-32 py-8 px-6 bg-[#E6F0EB]">
-      <h1 className="text-[#006C39] font-bold text-center lg:text-[32px] text-2xl">
-        Fasilitas
-      </h1>
+      <div className="lg:w-[1200px] mx-auto">
+        <h1 className="text-[#006C39] font-bold text-center lg:text-[32px] text-2xl">
+          Fasilitas
+        </h1>
 
-      <div className="relative mt-12">
-        {/* Left Arrow Button */}
-        <button
-          onClick={() => handleArrowClick("left")}
-          className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10"
-        >
-          <Image
-            src="/icon/left-arrow.svg"
-            alt="Left Arrow"
-            width={40}
-            height={40}
-            className="w-10 h-10"
-          />
-        </button>
-
-        {/* Visible Cards Container */}
-        <div className="overflow-hidden mx-16">
-          <div
-            className="flex transition-transform duration-500 ease-in-out"
-            style={{
-              transform: `translateX(-${activeIndex * (100 / cardsToShow)}%)`,
-            }}
+        <div className="relative mt-12">
+          {/* Left Arrow Button */}
+          <button
+            onClick={() => handleArrowClick("left")}
+            className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10"
           >
-            {facilities.map((facility) => (
-              <div
-                key={facility.id}
-                className={`w-full ${isMobile ? "px-0" : "px-2"}`}
-                style={{ flex: `0 0 ${100 / cardsToShow}%` }}
-              >
-                <div className="flex justify-center">
-                  <CardFasilitas title={facility.title} />
+            <Image
+              src="/icon/left-arrow.svg"
+              alt="Left Arrow"
+              width={40}
+              height={40}
+              className="w-10 h-10"
+            />
+          </button>
+
+          {/* Visible Cards Container */}
+          <div className="overflow-hidden mx-16">
+            <div
+              className="flex transition-transform duration-500 ease-in-out"
+              style={{
+                transform: `translateX(-${activeIndex * (100 / cardsToShow)}%)`,
+              }}
+            >
+              {facilities.map((facility) => (
+                <div
+                  key={facility.id}
+                  className={`w-full ${isMobile ? "px-0" : "px-2"}`}
+                  style={{ flex: `0 0 ${100 / cardsToShow}%` }}
+                >
+                  <div className="flex justify-center">
+                    <CardFasilitas title={facility.title} />
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
+
+          {/* Right Arrow Button */}
+          <button
+            onClick={() => handleArrowClick("right")}
+            className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10"
+          >
+            <Image
+              src="/icon/right-arrow.svg"
+              alt="Right Arrow"
+              width={40}
+              height={40}
+              className="w-10 h-10"
+            />
+          </button>
         </div>
 
-        {/* Right Arrow Button */}
-        <button
-          onClick={() => handleArrowClick("right")}
-          className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10"
-        >
-          <Image
-            src="/icon/right-arrow.svg"
-            alt="Right Arrow"
-            width={40}
-            height={40}
-            className="w-10 h-10"
-          />
-        </button>
-      </div>
-
-      {/* Navigation Dots */}
-      <div className="flex justify-center mt-12 gap-5">
-        {[...Array(totalSlides - cardsToShow + 1)].map((_, index) => (
-          <div
-            key={index}
-            onClick={() => handleDotClick(index)}
-            className={`cursor-pointer transition-all duration-300 rounded-lg ${
-              index === activeIndex
-                ? "w-[25px] h-[8px] bg-[#006C39]"
-                : "w-[8px] h-[8px] bg-[#BFBFBF]"
-            }`}
-          />
-        ))}
+        {/* Navigation Dots */}
+        <div className="flex justify-center mt-12 gap-5">
+          {[...Array(totalSlides - cardsToShow + 1)].map((_, index) => (
+            <div
+              key={index}
+              onClick={() => handleDotClick(index)}
+              className={`cursor-pointer transition-all duration-300 rounded-lg ${
+                index === activeIndex
+                  ? "w-[25px] h-[8px] bg-[#006C39]"
+                  : "w-[8px] h-[8px] bg-[#BFBFBF]"
+              }`}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
