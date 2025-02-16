@@ -67,18 +67,8 @@ export default function Navbar() {
       title: "Program",
       link: "",
       dropdown: [
-        { title: "Program Pengasuhan", link: "/program/program-pengasuhan" },
-        { title: "Program Keamanan", link: "/program/program-keamanan" },
         { title: "Program Tahfidz", link: "/program/program-tahfidz" },
         { title: "Program Ta'lim", link: "/program/program-talim" },
-        { title: "⁠Program Ubudiyah", link: "/program/program-ubudiyah" },
-        { title: "⁠Program Bahasa", link: "/program/program-bahasa" },
-        { title: "⁠Program Kesehatan", link: "/program/program-kesehatan" },
-        {
-          title: "⁠Program Ekstrakurikuler",
-          link: "/program/program-ekstrakulikuler",
-        },
-        { title: "⁠Program Wirausaha", link: "/program/program-wirausaha" },
       ],
     },
     { title: "Kegiatan", link: "/kegiatan" },

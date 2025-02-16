@@ -2,14 +2,14 @@ import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 import NavbarMenu from "@/components/navbar-menu";
 
-export default function ProgramTalim() {
+export default function ProgramBahasa() {
   return (
     <div className="w-full min-h-screen overflow-x-hidden">
       <Navbar />
       <NavbarMenu
-        title="Program Ta'lim"
+        title="Program Ta’lim"
         mainCategory="Program"
-        currentPage="Program Ta'lim"
+        currentPage="Program Ta’lim"
       />
       <div className="lg:px-36 lg:py-24 lg:bg-white">
         <h1 className="text-black font-normal text-justify text-[16px]">
