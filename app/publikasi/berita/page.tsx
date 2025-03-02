@@ -33,7 +33,7 @@ export default function Berita() {
           </div>
         </div>
         <div className="w-full h-[1px] bg-[#595959] opacity-50 mt-4 "></div>
-        <div className=" lg:mt-12 mt-2">
+        <div className=" lg:mt-12 mt-2 mb-10">
           <div className=" lg:grid lg:grid-flow-row lg:grid-cols-3 flex flex-col items-center gap-10 lg:mt-12 mt-8">
             <CardBerita />
             <CardBerita />
