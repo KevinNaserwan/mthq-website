@@ -64,6 +64,48 @@ const Fasilitas: React.FC = () => {
     });
   };
 
+  // Check if slider is at the beginning or end
+  const isAtBeginning = activeIndex === 0;
+  const isAtEnd = activeIndex === totalSlides - cardsToShow;
+
+  // Define the SVG for left arrow
+  const LeftArrow = () => (
+    <svg
+      width="60"
+      height="60"
+      viewBox="0 0 40 40"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M25 30L15 20L25 10"
+        stroke={isAtBeginning ? "#BFBFBF" : "#006C39"}
+        strokeWidth="3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+
+  // Define the SVG for right arrow
+  const RightArrow = () => (
+    <svg
+      width="60"
+      height="60"
+      viewBox="0 0 40 40"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M15 10L25 20L15 30"
+        stroke={isAtEnd ? "#BFBFBF" : "#006C39"}
+        strokeWidth="3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+
   return (
     <div className="lg:px-36 lg:py-32 py-8 px-6 bg-[#E6F0EB]">
       <div className="lg:w-[1200px] mx-auto">
@@ -77,13 +119,7 @@ const Fasilitas: React.FC = () => {
             onClick={() => handleArrowClick("left")}
             className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10"
           >
-            <Image
-              src="/icon/left-arrow.svg"
-              alt="Left Arrow"
-              width={40}
-              height={40}
-              className="w-10 h-10"
-            />
+            <LeftArrow />
           </button>
 
           {/* Visible Cards Container */}
@@ -113,13 +149,7 @@ const Fasilitas: React.FC = () => {
             onClick={() => handleArrowClick("right")}
             className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10"
           >
-            <Image
-              src="/icon/right-arrow.svg"
-              alt="Right Arrow"
-              width={40}
-              height={40}
-              className="w-10 h-10"
-            />
+            <RightArrow />
           </button>
         </div>
 

@@ -1,5 +1,4 @@
 "use client";
-
 import { useState, useEffect } from "react";
 import CardTestimoni from "../card-testimoni";
 import Image from "next/image";
@@ -65,10 +64,8 @@ export default function Testimoni() {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
     };
-
     handleResize(); // Check on mount
     window.addEventListener("resize", handleResize);
-
     return () => {
       window.removeEventListener("resize", handleResize);
     };
@@ -80,7 +77,6 @@ export default function Testimoni() {
   // Auto-slide effect
   useEffect(() => {
     let interval: NodeJS.Timeout;
-
     if (!isHovered) {
       interval = setInterval(() => {
         setCurrentIndex((prevIndex) =>
@@ -88,7 +84,6 @@ export default function Testimoni() {
         );
       }, 6000); //10 seconds
     }
-
     return () => {
       if (interval) {
         clearInterval(interval);
@@ -107,6 +102,50 @@ export default function Testimoni() {
       prevIndex === totalSlides - 1 ? 0 : prevIndex + 1
     );
   };
+
+  // Check if slider is at the beginning or end
+  const isAtBeginning = currentIndex === 0;
+  const isAtEnd = currentIndex === totalSlides - 1;
+
+  // Define the SVG for left arrow
+  const LeftArrow = () => (
+    <svg
+      width="60"
+      height="60"
+      viewBox="0 0 40 40"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className="w-8 h-8 lg:w-12 lg:h-12"
+    >
+      <path
+        d="M25 30L15 20L25 10"
+        stroke={isAtBeginning ? "#BFBFBF" : "#006C39"}
+        strokeWidth="4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+
+  // Define the SVG for right arrow
+  const RightArrow = () => (
+    <svg
+      width="60"
+      height="60"
+      viewBox="0 0 40 40"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className="w-8 h-8 lg:w-12 lg:h-12"
+    >
+      <path
+        d="M15 10L25 20L15 30"
+        stroke={isAtEnd ? "#BFBFBF" : "#006C39"}
+        strokeWidth="4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
 
   return (
     <div className="lg:w-[1200px] mx-auto lg:py-32 py-8 px-6 bg-white overflow-hidden">
@@ -130,15 +169,8 @@ export default function Testimoni() {
       >
         {/* Button Left */}
         <button onClick={handlePrev} className="absolute left-0 p-2 z-10">
-          <Image
-            src="/icon/left-arrow.svg"
-            alt="Left Arrow"
-            width={40}
-            height={40}
-            className="w-8 h-8 lg:w-12 lg:h-12"
-          />
+          <LeftArrow />
         </button>
-
         {/* Slider Content */}
         <div className="lg:flex-1 overflow-hidden">
           <div
@@ -166,16 +198,9 @@ export default function Testimoni() {
             ))}
           </div>
         </div>
-
         {/* Button Right */}
         <button onClick={handleNext} className="absolute right-0 p-2 z-10">
-          <Image
-            src="/icon/right-arrow.svg"
-            alt="Right Arrow"
-            width={40}
-            height={40}
-            className="w-8 h-8 lg:w-12 lg:h-12"
-          />
+          <RightArrow />
         </button>
       </div>
       <div className="flex flex-row justify-center gap-3">

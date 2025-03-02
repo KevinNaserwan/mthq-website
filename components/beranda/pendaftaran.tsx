@@ -5,6 +5,14 @@ import Accordion from "../accordion";
 import Button from "../button";
 
 export default function Pendaftaran() {
+  const handleWhatsAppClick = () => {
+    // WhatsApp phone number with country code
+    const phoneNumber = "6287749181562"; // Formatted without spaces or dashes
+    const whatsappUrl = `https://wa.me/${phoneNumber}`;
+
+    // Open WhatsApp in a new tab
+    window.open(whatsappUrl, "_blank");
+  };
   const content1: string[] = [
     "Pendaftaran Online: 11 November – 14 Desember 2024",
     "Tes Seleksi: 12 Januari 2025",
@@ -52,7 +60,7 @@ export default function Pendaftaran() {
             pengembangan karakter, dan kemampuan bahasa Arab serta Inggris.
           </p>
           <div className="mt-6">
-            <Button text="Daftar Sekarang" />
+            <Button text="Daftar Sekarang" onClick={handleWhatsAppClick} />
           </div>
         </div>
         <div className="flex flex-col items-center justify-center text-white z-20">
