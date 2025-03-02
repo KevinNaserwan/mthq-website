@@ -40,7 +40,7 @@ export default function Galeri() {
           Dokumentasi kegiatan, program, dan pencapaian di Ma&apos;had Tahfidz
           Hidayatul Qur&apos;an Bangka.
         </h1>
-        <div className="lg:grid grid-flow-col grid-cols-4 border-[#BFBFBF] border bg-[#fbfbfb] mt-6">
+        <div className="lg:grid grid-flow-col lg:mx-0 mx-4 grid-cols-4 border-[#BFBFBF] border bg-[#fbfbfb] mt-6">
           {categories.map((category) => (
             <div
               key={category.id}
@@ -70,8 +70,8 @@ export default function Galeri() {
         </div>
 
         {/* Scrollable gallery container with max 4 rows visible */}
-        <div className="lg:grid grid-flow-col bg-[#E6E6E6] rounded-br-lg rounded-bl-lg mb-6 pt-8 pb-6 relative">
-          <div className="grid grid-flow-col overflow-y-auto max-h-[680px] pr-4">
+        <div className="lg:grid grid-flow-col lg:mx-0 mx-4 bg-[#E6E6E6] rounded-br-lg rounded-bl-lg mb-6 pt-8 pb-6 relative">
+          <div className="grid lg:grid-flow-col grid-flow-row overflow-y-auto max-h-[680px] lg:pr-4">
             {" "}
             {/* Height for 4 rows + gaps */}
             <div className="grid grid-flow-row gap-6 mx-8 justify-around">
@@ -125,7 +125,7 @@ export default function Galeri() {
           </div>
 
           {/* Scroll indicator */}
-          <div className="relative">
+          <div className="lg:relative hidden">
             <div className="absolute  scroll-indicator"></div>
           </div>
         </div>
