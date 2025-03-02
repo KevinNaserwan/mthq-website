@@ -55,22 +55,25 @@ export default function Footer() {
         <div className="site-menu">
           <h1 className="font-semibold text-white">Site Menu</h1>
           <div className=" grid grid-rows-6 lg:h-[216px] mt-4 text-white">
-            <Link href="" className=" hover:font-bold">
+            <Link href="/" className=" hover:font-bold">
               Beranda
             </Link>
-            <Link href="" className=" hover:font-bold">
+            <Link href="/tentang-mthq/profil" className=" hover:font-bold">
               Tentang MTHQ
             </Link>
-            <Link href="" className=" hover:font-bold">
+            <Link href="/program/program-tahfidz" className=" hover:font-bold">
               Program
             </Link>
-            <Link href="" className=" hover:font-bold">
+            <Link href="/publikasi/galeri" className=" hover:font-bold">
               Galeri
             </Link>
-            <Link href="" className=" hover:font-bold">
+            <Link
+              href="/tentang-mthq/kalender-akademik"
+              className=" hover:font-bold"
+            >
               Kalender Akademik
             </Link>
-            <Link href="" className=" hover:font-bold">
+            <Link href="/kontak" className=" hover:font-bold">
               Kontak
             </Link>
           </div>

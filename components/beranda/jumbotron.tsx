@@ -6,6 +6,7 @@ import "swiper/css";
 import "swiper/css/autoplay";
 import Image from "next/image";
 import Button from "../button";
+import Link from "next/link";
 
 export default function Jumbotron() {
   const backgrounds = [
@@ -51,7 +52,9 @@ export default function Jumbotron() {
           formal.
         </p>
         <div className="mt-6 px-6">
-          <Button text="Selengkapnya" />
+          <Link href="/tentang-mthq/profil">
+            <Button text="Selengkapnya" />
+          </Link>
         </div>
         <div className="lg:absolute flex flex-col w-full mt-10 py-5 gap-4 lg:w-[700px] bg-[#006C39] lg:grid lg:grid-flow-row lg:grid-cols-5 lg:px-16 lg:py-4 lg:rounded-lg lg:-bottom-10 lg:left-1/2 lg:transform lg:-translate-x-1/2 lg:justify-items-center">
           <div className="flex flex-row items-center justify-center gap-5">
