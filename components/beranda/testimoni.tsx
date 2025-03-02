@@ -1,7 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
 import CardTestimoni from "../card-testimoni";
-import Image from "next/image";
 
 interface TestimonyData {
   name: string;

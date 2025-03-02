@@ -5,7 +5,6 @@ import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 import NavbarMenu from "@/components/navbar-menu";
 import Image from "next/image";
-import Link from "next/link";
 
 export default function Galeri() {
   // State to track the active category
@@ -24,7 +23,7 @@ export default function Galeri() {
   ];
 
   // Handler for category click
-  const handleCategoryClick = (categoryId: any) => {
+  const handleCategoryClick = (categoryId: string) => {
     setActiveCategory(categoryId);
   };
 
@@ -38,8 +37,8 @@ export default function Galeri() {
       />
       <div className="lg:px-36 lg:py-24 lg:bg-white">
         <h1 className="text-black font-normal text-[16px] text-center">
-          Dokumentasi kegiatan, program, dan pencapaian di Ma'had Tahfidz
-          Hidayatul Qur'an Bangka.
+          Dokumentasi kegiatan, program, dan pencapaian di Ma&apos;had Tahfidz
+          Hidayatul Qur&apos;an Bangka.
         </h1>
         <div className="lg:grid grid-flow-col grid-cols-4 border-[#BFBFBF] border bg-[#fbfbfb] mt-6">
           {categories.map((category) => (

@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from "react";
 import CardFasilitas from "../card-fasilitas";
-import Image from "next/image";
 
 interface Facility {
   id: number;
