@@ -30,6 +30,11 @@ export default function Pendaftaran() {
     "Ustadzah Fataria: 0857 6939 8170",
   ];
 
+  const biayapendidikan: string[] = [
+    "Wakaf Pembangunan: Rp 2.000.000,-",
+    "Keperluan Tahunan: Rp 1.360.000, (seperti seragam, buku, dll).",
+  ];
+
   // State to manage which accordion is open, set default to 2 (Jadwal Pendaftaran dan Seleksi)
   const [activeAccordion, setActiveAccordion] = useState<number | null>(2);
 
@@ -78,7 +83,7 @@ export default function Pendaftaran() {
           />
           <Accordion
             title="Biaya Pendidikan"
-            content={[]}
+            content={biayapendidikan}
             isActive={activeAccordion === 3}
             onClick={() => handleAccordionClick(3)}
           />

@@ -1,3 +1,5 @@
+"use client";
+
 import Button from "@/components/button";
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
@@ -5,6 +7,21 @@ import NavbarMenu from "@/components/navbar-menu";
 import Image from "next/image";
 
 export default function KalenderAkademik() {
+  const handleDownloadCalendar = () => {
+    // Create a link element
+    const link = document.createElement("a");
+    // Set the href to the PDF file path
+    link.href = "/kalender.pdf";
+    // Set download attribute with filename
+    link.download = "kalender.pdf";
+    // Append to the document
+    document.body.appendChild(link);
+    // Trigger the download
+    link.click();
+    // Clean up
+    document.body.removeChild(link);
+  };
+
   return (
     <div className="w-full min-h-screen overflow-x-hidden">
       <Navbar />
@@ -128,9 +145,8 @@ export default function KalenderAkademik() {
               />
             </div>
           </div>
-          <div className=" flex justify-center mt-6">
-            {" "}
-            <Button text="Unduh Kalender" />
+          <div className="flex justify-center mt-6">
+            <Button text="Unduh Kalender" onClick={handleDownloadCalendar} />
           </div>
         </div>
       </div>
