@@ -100,12 +100,14 @@ export default function Navbar() {
     <div className="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
       <div className="flex flex-row justify-between lg:w-[1200px] mx-auto py-3 lg:px-0 px-4">
         <div>
-          <Image
-            alt="MTHQ Logo"
-            src="/image/logo-navbar.png"
-            width={160}
-            height={60}
-          />
+          <Link href="/">
+            <Image
+              alt="MTHQ Logo"
+              src="/image/logo-navbar.png"
+              width={160}
+              height={60}
+            />
+          </Link>
         </div>
         <div className="flex flex-row items-center gap-7 lg:hidden">
           <button
