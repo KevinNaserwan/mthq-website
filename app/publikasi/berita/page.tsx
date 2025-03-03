@@ -1,3 +1,5 @@
+"use client";
+
 import CardBerita from "@/components/card-berita";
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
@@ -14,7 +16,7 @@ export default function Berita() {
         currentPage="Berita"
       />
       <div className="lg:p-36 lg:pb-24 lg:pt-16 lg:bg-white">
-        <div className=" flex lg:flex-row flex-col gap-3 lg:gap-0 mx-3 lg:mx-0 lg:mt-0 mt-3 justify-between items-center">
+        {/* <div className=" flex lg:flex-row flex-col gap-3 lg:gap-0 mx-3 lg:mx-0 lg:mt-0 mt-3 justify-between items-center">
           <div className=" flex lg:w-fit w-full lg:flex-row flex-col gap-3 items-center ">
             <div className=" flex lg:w-fit w-full flex-row items-center gap-2 rounded-full py-2 px-5 border">
               <Image alt="" src="/icon/time.png" width={20} height={20} />
@@ -31,8 +33,8 @@ export default function Berita() {
               <Image alt="" src="/icon/search.png" width={20} height={20} />
             </div>
           </div>
-        </div>
-        <div className="w-full h-[1px] bg-[#595959] opacity-50 mt-4 "></div>
+        </div> */}
+        {/* <div className="w-full h-[1px] bg-[#595959] opacity-50 mt-4 "></div> */}
         <div className=" lg:mt-12 mt-2 mb-10">
           <div className=" lg:grid lg:grid-flow-row lg:grid-cols-3 flex flex-col items-center gap-10 lg:mt-12 mt-8">
             <CardBerita />

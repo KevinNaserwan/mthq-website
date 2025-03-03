@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Button from "./button";
 
@@ -25,7 +27,7 @@ export default function CardBerita() {
           Perjalanan panjang penuh doa dan usaha akhirnya terbayar. Wisuda Akbar
           Santri Tahfidz MTHQ 2024 menjadi puncak kebanggaan bagi...
         </p>
-        <Button text="Baca Selengkapnya" />
+        <Button text="Baca Selengkapnya" href="/publikasi/berita/1" />
       </div>
     </div>
   );
