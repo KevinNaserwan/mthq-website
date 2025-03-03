@@ -1,4 +1,3 @@
-import CardBerita from "@/components/card-berita";
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 import NavbarMenu from "@/components/navbar-menu";

@@ -4,7 +4,6 @@ import CardBerita from "@/components/card-berita";
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 import NavbarMenu from "@/components/navbar-menu";
-import Image from "next/image";
 
 export default function Berita() {
   return (
