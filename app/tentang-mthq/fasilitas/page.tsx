@@ -1,6 +1,7 @@
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 import NavbarMenu from "@/components/navbar-menu";
+import Image from "next/image";
 
 export default function Fasilitas() {
   return (
@@ -21,7 +22,22 @@ export default function Fasilitas() {
           mengembangkan diri dengan optimal.
         </h1>
         <div className=" mt-12">
-          <div className=" flex flex-row flex-wrap gap-16 grid-cols-4 justify-center items-center"></div>
+          <div className=" flex flex-row flex-wrap gap-16 grid-cols-4 justify-center items-center">
+            <Image
+              alt=""
+              src="/image/fasilitas.png"
+              className=" lg:block hidden"
+              width={1200}
+              height={1200}
+            />
+            <Image
+              alt=""
+              src="/image/fasilitas-mobile.png"
+              className=" lg:hidden block"
+              width={300}
+              height={300}
+            />
+          </div>
         </div>
       </div>
       <Footer />

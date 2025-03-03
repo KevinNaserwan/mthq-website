@@ -104,7 +104,7 @@ export default function Kontak() {
                 height={356}
               />
               <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
-                <button className="bg-[#25D366] rounded-full flex-row items-center gap-3 inline-flex p-3 px-5 absolute bottom-10 lg:right-12 right-8">
+                <button className="bg-[#25D366] hover:bg-[#006C39] rounded-full flex-row items-center gap-3 inline-flex p-3 px-5 absolute bottom-10 lg:right-12 right-8">
                   <h1 className="font-bold text-base text-white">
                     Hubungi MTHQ
                   </h1>
@@ -136,7 +136,9 @@ export default function Kontak() {
               </p>
             </div>
             <Link
-              href={"https://play.google.com/store/apps/details?id=com.mthq"}
+              href={
+                "https://play.google.com/store/apps/details?id=com.ziad.mthqmobile&hl=id&pli=1"
+              }
             >
               {" "}
               <Image
