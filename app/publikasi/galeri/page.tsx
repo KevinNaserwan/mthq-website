@@ -27,26 +27,26 @@ export default function Galeri() {
   const getImagePaths = () => {
     switch (activeCategory) {
       case "kegiatan":
-        return [...Array(8)].map(
+        return [...Array(4)].map(
           (_, index) => `/image/galeri/1/galeri${index + 1}.png`
         );
       case "program":
-        return [...Array(8)].map(
+        return [...Array(4)].map(
           (_, index) => `/image/galeri/2/galeri${index + 1}.png`
         );
       case "wisuda":
-        return [...Array(8)].map(
+        return [...Array(4)].map(
           (_, index) => `/image/galeri/3/galeri${index + 1}.png`
         );
       case "semua":
         return [
-          ...[...Array(8)].map(
+          ...[...Array(4)].map(
             (_, index) => `/image/galeri/1/galeri${index + 1}.png`
           ),
-          ...[...Array(8)].map(
+          ...[...Array(4)].map(
             (_, index) => `/image/galeri/2/galeri${index + 1}.png`
           ),
-          ...[...Array(8)].map(
+          ...[...Array(4)].map(
             (_, index) => `/image/galeri/3/galeri${index + 1}.png`
           ),
         ];
