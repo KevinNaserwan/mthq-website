@@ -13,12 +13,12 @@ export default function Kegiatan() {
         currentPage="Kegiatan"
       />
       <div className="lg:px-36 lg:pt-24 lg:bg-white">
-        <h1 className="text-black font-normal text-justify text-[16px]">
+        <h1 className="text-black font-normal text-justify text-[16px] px-6 py-6 lg:px-0 lg:py-0">
           Di MTHQ, santri mengikuti beragam kegiatan harian, pekanan, hingga
           tahunan yang dirancang untuk membangun kedisiplinan, memperdalam ilmu
           agama, serta mengembangkan keterampilan dan bakat.
         </h1>
-        <div className=" mt-12">
+        <div className=" lg:mt-12">
           <div className=" flex flex-row flex-wrap gap-16 grid-cols-4 justify-center items-center"></div>
         </div>
       </div>
@@ -51,7 +51,14 @@ export default function Kegiatan() {
       </div>
       <div className="bg-[#E6F0EB] lg:px-36 lg:py-12 flex flex-col gap-10 px-6 py-8">
         <div className="lg:w-[1200px] mx-auto ">
-          <div className=" flex lg:flex-row justify-between mt-6 items-center">
+          <Image
+            src="/image/kegiatan-1.png"
+            width={328}
+            className=" lg:hidden block"
+            height={536}
+            alt=""
+          />
+          <div className=" flex lg:flex-row justify-between mt-6 items-center lg:block hidden">
             <div>
               <h1 className="lg:text-left font-bold text-[#006C39] lg:text-[32px text-2xl text-center ">
                 Kegiatan Pekanan
@@ -95,24 +102,40 @@ export default function Kegiatan() {
         </div>
       </div>
       <div className="bg-[#fff] lg:px-36 lg:py-12 flex flex-col gap-10 px-6 py-8">
-        <h1 className="lg:text-left font-bold text-[#006C39] lg:text-[32px text-2xl text-center ">
+        <h1 className="lg:text-left font-bold text-[#006C39] lg:text-[32px text-2xl text-center lg:block hidden ">
           Kegiatan Semesteran
         </h1>
         <Image
           src="/image/kegiatan-semesteran.png"
           width={1150}
+          className=" lg:block hidden"
           height={200}
+          alt=""
+        />
+        <Image
+          src="/image/kegiatan-2.png"
+          width={328}
+          className=" lg:hidden block mx-auto"
+          height={536}
           alt=""
         />
       </div>
       <div className="bg-[#E6F0EB] lg:px-36 lg:py-12 flex flex-col gap-10 px-6 py-8">
-        <h1 className="lg:text-left font-bold text-[#006C39] lg:text-[32px text-2xl text-center ">
+        <h1 className="lg:text-left font-bold text-[#006C39] lg:text-[32px text-2xl text-center lg:block hidden ">
           Kegiatan Tahunan
         </h1>
         <Image
           src="/image/kegiatan-tahunan.png"
+          className=" lg:block hidden"
           width={1150}
           height={282}
+          alt=""
+        />
+        <Image
+          src="/image/kegiatan-3.png"
+          width={328}
+          className=" lg:hidden block mx-auto"
+          height={536}
           alt=""
         />
       </div>
