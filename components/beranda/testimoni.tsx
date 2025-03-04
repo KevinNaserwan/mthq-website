@@ -16,44 +16,44 @@ export default function Testimoni() {
 
   const testimonies: TestimonyData[] = [
     {
-      name: "Dewi Ratna Melisa",
+      name: "Steven",
       role: "Wali Santri",
-      image: "/image/testimoni/1.png",
+      image: "/image/testimoni/Ellipse 2.png",
       testimony:
         "Lingkungan di MTHQ sangat mendukung untuk anak-anak belajar dengan nyaman dan teratur.",
     },
     {
-      name: "Agus Mubarok",
+      name: "Gusti",
       role: "Wali Santri",
-      image: "/image/testimoni/2.png",
+      image: "/image/testimoni/Ellipse 3.png",
       testimony:
         "MTHQ bukan hanya sekadar pesantren, tetapi juga tempat terbaik untuk membentuk karakter dan kecerdasan spiritual anak-anak kami.",
     },
     {
-      name: "Viviana Putri",
+      name: "Wahyu",
       role: "Wali Santri",
-      image: "/image/testimoni/3.png",
+      image: "/image/testimoni/Ellipse 4.png",
       testimony:
         "Kami melihat perubahan positif dalam kemandirian dan kedisiplinan anak sejak belajar di MTHQ.",
     },
     {
-      name: "Abdul Barik",
+      name: "Ayu",
       role: "Wali Santri",
-      image: "/image/testimoni/4.png",
+      image: "/image/testimoni/Ellipse 5.png",
       testimony:
         "MTHQ berhasil menanamkan akhlak yang baik serta pemahaman agama yang mendalam pada anak kami.",
     },
     {
-      name: "Indah Purnama",
+      name: "Lita",
       role: "Wali Santri",
-      image: "/image/testimoni/5.png",
+      image: "/image/testimoni/Ellipse 6.png",
       testimony:
         "Fasilitas yang lengkap di MTHQ membuat anak kami nyaman dan semangat belajar.",
     },
     {
-      name: "Afif Yudha",
+      name: "Wati",
       role: "Wali Santri",
-      image: "/image/testimoni/6.png",
+      image: "/image/testimoni/Ellipse 7.png",
       testimony:
         "Alhamdulillah, anak kami menjadi lebih tekun dan disiplin berkat pendidikan di MTHQ.",
     },
