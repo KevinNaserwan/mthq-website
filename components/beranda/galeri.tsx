@@ -24,7 +24,7 @@ export default function Galeri() {
         />
         <div className="flex justify-center">
           {" "}
-          <Button text="Selengkapnya" />
+          <Button href="/publikasi/galeri" text="Selengkapnya" />
         </div>
       </div>
     </div>

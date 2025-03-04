@@ -6,18 +6,25 @@ import CardFasilitas from "../card-fasilitas";
 interface Facility {
   id: number;
   title: string;
+  imageName: string;
 }
 
 const Fasilitas: React.FC = () => {
   const facilities: Facility[] = [
-    { id: 1, title: "Facility 1" },
-    { id: 2, title: "Facility 2" },
-    { id: 3, title: "Facility 3" },
-    { id: 4, title: "Facility 4" },
-    { id: 5, title: "Facility 5" },
-    { id: 6, title: "Facility 6" },
-    { id: 7, title: "Facility 7" },
-    { id: 8, title: "Facility 8" },
+    { id: 1, title: "Kantin Putra", imageName: "KANTIN PUTRA.jpg" },
+    { id: 2, title: "Perpustakaan", imageName: "perpustakaan.jpg" },
+    { id: 3, title: "Laboratorium", imageName: "LAB KOMPUTER.jpg" },
+    { id: 4, title: "Masjid", imageName: "MASJID.jpg" },
+    { id: 5, title: "Perumahan Guru", imageName: "PERUMAHAN GURU.jpg" },
+    { id: 6, title: "Ruang Kelas", imageName: "RUANG KELAS.jpg" },
+    { id: 7, title: "Perpustakaan Putra", imageName: "PERPUS PUTRA.jpg" },
+    { id: 8, title: "Penginapan Tamu", imageName: "Penginapan Tamu.png" },
+    { id: 9, title: "Kantor Madrasah", imageName: "KANTOR MADRASAH.jpg" },
+    {
+      id: 10,
+      title: "Kantor Administrasi",
+      imageName: "KANTOR ADMINISTRASI.jpg",
+    },
   ];
 
   const [activeIndex, setActiveIndex] = useState<number>(0);
@@ -136,7 +143,10 @@ const Fasilitas: React.FC = () => {
                   style={{ flex: `0 0 ${100 / cardsToShow}%` }}
                 >
                   <div className="flex justify-center">
-                    <CardFasilitas title={facility.title} />
+                    <CardFasilitas
+                      title={facility.title}
+                      imageName={facility.imageName}
+                    />
                   </div>
                 </div>
               ))}
