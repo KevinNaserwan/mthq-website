@@ -139,7 +139,7 @@ export default function Testimoni() {
   );
 
   return (
-    <div className="lg:w-[1200px] mx-auto lg:py-32 py-8 px-6 bg-white overflow-hidden">
+    <div className="lg:w-[1200px] mx-auto lg:py-32 py-8 px-6 bg-white overflow-x-hidden">
       <h1 className="text-[#006C39] font-bold text-center lg:text-[32px] text-2xl">
         Testimoni
       </h1>
@@ -163,9 +163,9 @@ export default function Testimoni() {
           <LeftArrow />
         </button>
         {/* Slider Content */}
-        <div className="lg:flex-1 overflow-hidden">
+        <div className="lg:flex-1 overflow-x-hidden">
           <div
-            className="flex transition-transform duration-500 w-full"
+            className="flex transition-transform duration-500 py-12"
             style={{
               transform: `translateX(-${currentIndex * 100}%)`,
             }}
@@ -173,9 +173,7 @@ export default function Testimoni() {
             {Array.from({ length: totalSlides }).map((_, slideIndex) => (
               <div
                 key={slideIndex}
-                className={`flex justify-center lg:gap-5 lg:min-w-full w-[300px] lg:mx-0 mx-12 my-12 ${
-                  isMobile ? "" : ""
-                }`}
+                className="flex min-w-full justify-center items-center gap-6 lg:gap-10 px-2 lg:px-0"
               >
                 {testimonies
                   .slice(
