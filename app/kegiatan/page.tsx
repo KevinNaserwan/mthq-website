@@ -54,50 +54,51 @@ export default function Kegiatan() {
           <Image
             src="/image/kegiatan-1.png"
             width={328}
-            className=" lg:hidden block"
+            className="lg:hidden block mx-auto"
             height={536}
             alt=""
           />
-          <div className=" flex lg:flex-row justify-between mt-6 items-center lg:block hidden">
-            <div>
-              <h1 className="lg:text-left font-bold text-[#006C39] lg:text-[32px text-2xl text-center ">
+          <div className="hidden lg:flex flex-row justify-between items-center mt-6 w-full">
+            <div className="w-7/12">
+              <h1 className="text-left font-bold text-[#006C39] text-[32px] mb-4">
                 Kegiatan Pekanan
               </h1>
-              <div>
-                <table className=" flex lg:flex-col gap-3 mt-3 w-9/12">
-                  <tr className=" flex flex-row items-start gap-2">
-                    <td className=" font-bold">Jumat</td>
-                    <td className=" font-bold">: </td>
-                    <td>
-                      Muhadatsah Prakter Percapakan Arab/Inggris, Pembacaan
-                      Surah Al- Kahfi, dzikir dan doa bersama
-                    </td>
-                  </tr>
-                  <tr className=" flex flex-row items-start gap-2">
-                    <td className=" font-bold">Sabtu</td>
-                    <td className=" font-bold">: </td>
-                    <td>
-                      Kajian Tafsir An-Nawawi, Nonton Bareng, (Bahasa Arab/
-                      Bahasa Inggris/sejarah/hiburan)
-                    </td>
-                  </tr>
-                  <tr className=" flex flex-row items-start gap-2">
-                    <td className=" font-bold">Ahad</td>
-                    <td className=" font-bold">: </td>
-                    <td>
-                      Kajian Hadits Kitab Mukhtarul Ahadits, Muhadatsah/Tasji’ul
-                      Lughoh, Jogging, dilanjutkan Senam Bersama
-                    </td>
-                  </tr>
-                </table>
-              </div>
+              <table className="flex flex-col gap-3 mt-3 w-full">
+                <tr className="flex flex-row items-start gap-2">
+                  <td className="font-bold">Jumat</td>
+                  <td className="font-bold">: </td>
+                  <td>
+                    Muhadatsah Prakter Percapakan Arab/Inggris, Pembacaan Surah
+                    Al- Kahfi, dzikir dan doa bersama
+                  </td>
+                </tr>
+                <tr className="flex flex-row items-start gap-2">
+                  <td className="font-bold">Sabtu</td>
+                  <td className="font-bold">: </td>
+                  <td>
+                    Kajian Tafsir An-Nawawi, Nonton Bareng, (Bahasa Arab/ Bahasa
+                    Inggris/sejarah/hiburan)
+                  </td>
+                </tr>
+                <tr className="flex flex-row items-start gap-2">
+                  <td className="font-bold">Ahad</td>
+                  <td className="font-bold">: </td>
+                  <td>
+                    Kajian Hadits Kitab Mukhtarul Ahadits, Muhadatsah/Tasjiul
+                    Lughoh, Jogging, dilanjutkan Senam Bersama
+                  </td>
+                </tr>
+              </table>
             </div>
-            <Image
-              src="/image/kegiatan-pekanan.png"
-              width={351}
-              height={242}
-              alt=""
-            />
+            <div className="w-4/12 flex justify-end">
+              <Image
+                src="/image/kegiatan-pekanan.png"
+                width={351}
+                height={242}
+                alt=""
+                className=""
+              />
+            </div>
           </div>
         </div>
       </div>

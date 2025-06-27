@@ -11,6 +11,10 @@ interface TestimoniGrouped {
   testimony: string;
 }
 
+function normalizeAttr(attr: string) {
+  return attr.toLowerCase().replace(/\s|-/g, "");
+}
+
 export default function Testimoni() {
   const [testimonies, setTestimonies] = useState<TestimoniGrouped[]>([]);
   const [currentIndex, setCurrentIndex] = useState<number>(0);
@@ -22,16 +26,17 @@ export default function Testimoni() {
       // Group by section_id
       const grouped: Record<string, Partial<TestimoniGrouped>> = {};
       data.forEach((item) => {
+        const attr = normalizeAttr(item.nama_attribute);
         if (!grouped[item.section_id]) grouped[item.section_id] = {};
-        if (item.nama_attribute === "Gambar Testimoni")
+        if (attr === "gambartestimoni")
           grouped[item.section_id].image = item.konten_gambar
             ? `https://backend.mthq-bangka.site/storage/${item.konten_gambar}`
             : "/image/testimoni/1.png";
-        if (item.nama_attribute === "Nama Testimoni")
+        if (attr === "namatestimoni")
           grouped[item.section_id].name = item.konten_teks || "";
-        if (item.nama_attribute === "Nama Status Testimoni")
+        if (attr === "namastatustestimoni")
           grouped[item.section_id].role = item.konten_teks || "";
-        if (item.nama_attribute === "Teks - Testimoni")
+        if (attr === "tekstestimoni")
           grouped[item.section_id].testimony = item.konten_teks || "";
       });
       // Only include complete testimonies and map to correct type

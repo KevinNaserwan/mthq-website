@@ -148,6 +148,17 @@ export default function KalenderAkademik() {
           <div className="flex justify-center mt-6">
             <Button text="Unduh Kalender" onClick={handleDownloadCalendar} />
           </div>
+          <div className="mt-8 flex justify-center">
+            <a
+              href="https://backend.mthq-bangka.site/api/kalender-akademik/1/download"
+              target="_blank"
+              rel="noopener noreferrer"
+              download
+              className="bg-[#006C39] hover:bg-[#018B36] text-white font-semibold py-3 px-6 rounded-lg shadow transition-colors duration-200"
+            >
+              Download Kalender Akademik
+            </a>
+          </div>
         </div>
       </div>
       <Footer />
