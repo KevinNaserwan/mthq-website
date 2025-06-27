@@ -4,8 +4,15 @@ import CardTestimoni from "../card-testimoni";
 import { getTestimoni } from "@/api/beritaApi";
 import type { TestimoniItem } from "@/types/berita";
 
+interface TestimoniGrouped {
+  name: string;
+  role: string;
+  image: string;
+  testimony: string;
+}
+
 export default function Testimoni() {
-  const [testimonies, setTestimonies] = useState<any[]>([]);
+  const [testimonies, setTestimonies] = useState<TestimoniGrouped[]>([]);
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [isHovered, setIsHovered] = useState<boolean>(false);
   const [isMobile, setIsMobile] = useState<boolean>(false);
@@ -13,7 +20,7 @@ export default function Testimoni() {
   useEffect(() => {
     getTestimoni().then((data: TestimoniItem[]) => {
       // Group by section_id
-      const grouped: Record<string, Partial<any>> = {};
+      const grouped: Record<string, Partial<TestimoniGrouped>> = {};
       data.forEach((item) => {
         if (!grouped[item.section_id]) grouped[item.section_id] = {};
         if (item.nama_attribute === "Gambar Testimoni")
@@ -27,10 +34,18 @@ export default function Testimoni() {
         if (item.nama_attribute === "Teks - Testimoni")
           grouped[item.section_id].testimony = item.konten_teks || "";
       });
-      // Only include complete testimonies
-      const result = Object.values(grouped).filter(
-        (t) => t.image && t.name && t.role && t.testimony
-      );
+      // Only include complete testimonies and map to correct type
+      const result: TestimoniGrouped[] = Object.values(grouped)
+        .filter(
+          (t): t is TestimoniGrouped =>
+            !!t.image && !!t.name && !!t.role && !!t.testimony
+        )
+        .map((t) => ({
+          name: t.name!,
+          role: t.role!,
+          image: t.image!,
+          testimony: t.testimony!,
+        }));
       setTestimonies(result);
     });
   }, []);

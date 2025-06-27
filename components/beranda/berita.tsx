@@ -36,8 +36,8 @@ export default function BerandaBerita() {
           !error &&
           berita.map((item) => (
             <CardBerita
-              key={item.id}
-              id={item.id}
+              key={item.id.toString()}
+              idCard={item.id}
               judul_berita={item.judul_berita}
               tanggal_upload={item.tanggal_upload}
               highlight_berita={item.highlight_berita}

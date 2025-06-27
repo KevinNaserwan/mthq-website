@@ -16,7 +16,7 @@ export default function Berita() {
   useEffect(() => {
     getListBerita()
       .then((data) => setBerita(data))
-      .catch((err) => setError("Gagal memuat berita"))
+      .catch(() => setError("Gagal memuat berita"))
       .finally(() => setLoading(false));
   }, []);
 
@@ -54,8 +54,8 @@ export default function Berita() {
           <div className=" lg:grid lg:grid-flow-row lg:grid-cols-3 flex flex-col items-center gap-10 lg:mt-12 mt-8">
             {berita.map((item) => (
               <CardBerita
-                key={item.id}
-                id={item.id}
+                key={item.id.toString()}
+                idCard={item.id}
                 judul_berita={item.judul_berita}
                 tanggal_upload={item.tanggal_upload}
                 highlight_berita={item.highlight_berita}

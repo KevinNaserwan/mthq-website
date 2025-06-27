@@ -2,18 +2,18 @@
 
 import Image from "next/image";
 import Button from "./button";
+import React from "react";
 
-interface CardBeritaProps {
-  id: number;
+interface CardBeritaProps extends React.HTMLAttributes<HTMLDivElement> {
+  idCard: number;
   judul_berita: string;
   tanggal_upload: string;
   highlight_berita: string;
   konten_gambar: string | null;
-  [key: string]: any; // agar props lain (seperti data-aos) bisa diterima
 }
 
 export default function CardBerita({
-  id,
+  idCard,
   judul_berita,
   tanggal_upload,
   highlight_berita,
@@ -52,7 +52,7 @@ export default function CardBerita({
         </div>
         <h1 className="font-bold text-black text-lg">{judul_berita}</h1>
         <p className="text-black text-xs">{highlight_berita}</p>
-        <Button text="Baca Selengkapnya" href={`/publikasi/berita/${id}`} />
+        <Button text="Baca Selengkapnya" href={`/publikasi/berita/${idCard}`} />
       </div>
     </div>
   );

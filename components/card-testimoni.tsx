@@ -1,5 +1,13 @@
 import Image from "next/image";
 import { useState } from "react";
+import React from "react";
+
+interface CardTestimoniProps extends React.HTMLAttributes<HTMLDivElement> {
+  name: string;
+  role: string;
+  image: string;
+  testimony: string;
+}
 
 export default function CardTestimoni({
   name,
@@ -7,7 +15,7 @@ export default function CardTestimoni({
   image,
   testimony,
   ...props
-}: any) {
+}: CardTestimoniProps) {
   const [imgError, setImgError] = useState(false);
   return (
     <div
