@@ -1,79 +1,54 @@
 "use client";
 import { useState, useEffect } from "react";
 import CardTestimoni from "../card-testimoni";
-
-interface TestimonyData {
-  name: string;
-  role: string;
-  image: string;
-  testimony: string;
-}
+import { getTestimoni } from "@/api/beritaApi";
+import type { TestimoniItem } from "@/types/berita";
 
 export default function Testimoni() {
+  const [testimonies, setTestimonies] = useState<any[]>([]);
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [isHovered, setIsHovered] = useState<boolean>(false);
   const [isMobile, setIsMobile] = useState<boolean>(false);
 
-  const testimonies: TestimonyData[] = [
-    {
-      name: "Steven",
-      role: "Wali Santri",
-      image: "/image/testimoni/Ellipse 2.png",
-      testimony:
-        "Lingkungan di MTHQ sangat mendukung untuk anak-anak belajar dengan nyaman dan teratur.",
-    },
-    {
-      name: "Gusti",
-      role: "Wali Santri",
-      image: "/image/testimoni/Ellipse 3.png",
-      testimony:
-        "MTHQ bukan hanya sekadar pesantren, tetapi juga tempat terbaik untuk membentuk karakter dan kecerdasan spiritual anak-anak kami.",
-    },
-    {
-      name: "Wahyu",
-      role: "Wali Santri",
-      image: "/image/testimoni/Ellipse 4.png",
-      testimony:
-        "Kami melihat perubahan positif dalam kemandirian dan kedisiplinan anak sejak belajar di MTHQ.",
-    },
-    {
-      name: "Ayu",
-      role: "Wali Santri",
-      image: "/image/testimoni/Ellipse 5.png",
-      testimony:
-        "MTHQ berhasil menanamkan akhlak yang baik serta pemahaman agama yang mendalam pada anak kami.",
-    },
-    {
-      name: "Lita",
-      role: "Wali Santri",
-      image: "/image/testimoni/Ellipse 6.png",
-      testimony:
-        "Fasilitas yang lengkap di MTHQ membuat anak kami nyaman dan semangat belajar.",
-    },
-    {
-      name: "Wati",
-      role: "Wali Santri",
-      image: "/image/testimoni/Ellipse 7.png",
-      testimony:
-        "Alhamdulillah, anak kami menjadi lebih tekun dan disiplin berkat pendidikan di MTHQ.",
-    },
-  ];
+  useEffect(() => {
+    getTestimoni().then((data: TestimoniItem[]) => {
+      // Group by section_id
+      const grouped: Record<string, Partial<any>> = {};
+      data.forEach((item) => {
+        if (!grouped[item.section_id]) grouped[item.section_id] = {};
+        if (item.nama_attribute === "Gambar Testimoni")
+          grouped[item.section_id].image = item.konten_gambar
+            ? `https://backend.mthq-bangka.site/storage/${item.konten_gambar}`
+            : "/image/testimoni/1.png";
+        if (item.nama_attribute === "Nama Testimoni")
+          grouped[item.section_id].name = item.konten_teks || "";
+        if (item.nama_attribute === "Nama Status Testimoni")
+          grouped[item.section_id].role = item.konten_teks || "";
+        if (item.nama_attribute === "Teks - Testimoni")
+          grouped[item.section_id].testimony = item.konten_teks || "";
+      });
+      // Only include complete testimonies
+      const result = Object.values(grouped).filter(
+        (t) => t.image && t.name && t.role && t.testimony
+      );
+      setTestimonies(result);
+    });
+  }, []);
 
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
     };
-    handleResize(); // Check on mount
+    handleResize();
     window.addEventListener("resize", handleResize);
     return () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
 
-  const itemsPerSlide = isMobile ? 1 : 3; // Mobile: 1 card, Desktop: 3 cards
+  const itemsPerSlide = isMobile ? 1 : 3;
   const totalSlides = Math.ceil(testimonies.length / itemsPerSlide);
 
-  // Auto-slide effect
   useEffect(() => {
     let interval: NodeJS.Timeout;
     if (!isHovered) {
@@ -81,7 +56,7 @@ export default function Testimoni() {
         setCurrentIndex((prevIndex) =>
           prevIndex === totalSlides - 1 ? 0 : prevIndex + 1
         );
-      }, 6000); //10 seconds
+      }, 6000);
     }
     return () => {
       if (interval) {
@@ -102,11 +77,9 @@ export default function Testimoni() {
     );
   };
 
-  // Check if slider is at the beginning or end
   const isAtBeginning = currentIndex === 0;
   const isAtEnd = currentIndex === totalSlides - 1;
 
-  // Define the SVG for left arrow
   const LeftArrow = () => (
     <svg
       width="60"
@@ -126,7 +99,6 @@ export default function Testimoni() {
     </svg>
   );
 
-  // Define the SVG for right arrow
   const RightArrow = () => (
     <svg
       width="60"
@@ -191,7 +163,11 @@ export default function Testimoni() {
                     slideIndex * itemsPerSlide + itemsPerSlide
                   )
                   .map((testimony, index) => (
-                    <CardTestimoni key={index} {...testimony} />
+                    <CardTestimoni
+                      key={index}
+                      {...testimony}
+                      data-aos="fade-up"
+                    />
                   ))}
               </div>
             ))}
@@ -201,16 +177,6 @@ export default function Testimoni() {
         <button onClick={handleNext} className="absolute right-0 p-2 z-10">
           <RightArrow />
         </button>
-      </div>
-      <div className="flex flex-row justify-center gap-3">
-        {Array.from({ length: totalSlides }).map((_, index) => (
-          <div
-            key={index}
-            className={`w-[40px] h-[10px] rounded-full ${
-              currentIndex === index ? "bg-[#006C39]" : "bg-[#BFBFBF]"
-            }`}
-          ></div>
-        ))}
       </div>
     </div>
   );

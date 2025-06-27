@@ -3,31 +3,56 @@
 import Image from "next/image";
 import Button from "./button";
 
-export default function CardBerita() {
+interface CardBeritaProps {
+  id: number;
+  judul_berita: string;
+  tanggal_upload: string;
+  highlight_berita: string;
+  konten_gambar: string | null;
+  [key: string]: any; // agar props lain (seperti data-aos) bisa diterima
+}
+
+export default function CardBerita({
+  id,
+  judul_berita,
+  tanggal_upload,
+  highlight_berita,
+  konten_gambar,
+  ...props
+}: CardBeritaProps) {
+  const imageUrl = konten_gambar
+    ? `https://backend.mthq-bangka.site/storage/${konten_gambar}`
+    : "/image/jumbotron/2.jpeg";
+
   return (
-    <div className="w-[350px] h-[450px] relative shadow-lg rounded-lg mx-auto">
-      <Image
-        src="/image/jumbotron/2.jpeg"
-        alt="image"
-        layout="fill"
-        objectFit="cover"
-        className="rounded-lg h-[20%] w-full"
-      />
-      <div className=" absolute z-10 bg-white flex flex-col items-start bottom-0 gap-3 p-4 rounded-b-lg">
-        <div className=" flex flex-row justify-between w-full">
-          <h1 className=" font-bold text-sm text-[#006C39]">Berita</h1>
-          <h1 className=" font-bold text-sm text-[#006C39]">
-            Senin, 03 Des 2024
+    <div
+      className="w-[350px] h-[450px] relative shadow-lg rounded-lg mx-auto overflow-hidden flex flex-col"
+      {...props}
+    >
+      <div className="relative w-full h-[180px] flex-shrink-0 bg-gray-100">
+        <Image
+          src={imageUrl}
+          alt="image"
+          fill
+          style={{ objectFit: "cover" }}
+          className="rounded-t-lg"
+        />
+      </div>
+      <div className="absolute z-10 bg-white flex flex-col items-start bottom-0 gap-3 p-4 rounded-b-lg w-full min-h-[270px]">
+        <div className="flex flex-row justify-between w-full">
+          <h1 className="font-bold text-sm text-[#006C39]">Berita</h1>
+          <h1 className="font-bold text-sm text-[#006C39]">
+            {new Date(tanggal_upload).toLocaleDateString("id-ID", {
+              weekday: "long",
+              year: "numeric",
+              month: "short",
+              day: "2-digit",
+            })}
           </h1>
         </div>
-        <h1 className=" font-bold text-black text-lg">
-          Wisuda Akbar Santri Tahfidz 2024
-        </h1>
-        <p className="text-black text-xs">
-          Perjalanan panjang penuh doa dan usaha akhirnya terbayar. Wisuda Akbar
-          Santri Tahfidz MTHQ 2024 menjadi puncak kebanggaan bagi...
-        </p>
-        <Button text="Baca Selengkapnya" href="/publikasi/berita/1" />
+        <h1 className="font-bold text-black text-lg">{judul_berita}</h1>
+        <p className="text-black text-xs">{highlight_berita}</p>
+        <Button text="Baca Selengkapnya" href={`/publikasi/berita/${id}`} />
       </div>
     </div>
   );

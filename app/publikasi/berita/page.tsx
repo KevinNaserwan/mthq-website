@@ -1,11 +1,25 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import CardBerita from "@/components/card-berita";
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 import NavbarMenu from "@/components/navbar-menu";
+import { getListBerita } from "@/api/beritaApi";
+import type { Berita } from "@/types/berita";
 
 export default function Berita() {
+  const [berita, setBerita] = useState<Berita[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    getListBerita()
+      .then((data) => setBerita(data))
+      .catch((err) => setError("Gagal memuat berita"))
+      .finally(() => setLoading(false));
+  }, []);
+
   return (
     <div className="w-full min-h-screen overflow-x-hidden">
       <Navbar />
@@ -35,13 +49,19 @@ export default function Berita() {
         </div> */}
         {/* <div className="w-full h-[1px] bg-[#595959] opacity-50 mt-4 "></div> */}
         <div className=" lg:mt-12 mt-2 mb-10">
+          {loading && <div className="text-center">Memuat berita...</div>}
+          {error && <div className="text-center text-red-500">{error}</div>}
           <div className=" lg:grid lg:grid-flow-row lg:grid-cols-3 flex flex-col items-center gap-10 lg:mt-12 mt-8">
-            <CardBerita />
-            <CardBerita />
-            <CardBerita />
-            <CardBerita />
-            <CardBerita />
-            <CardBerita />
+            {berita.map((item) => (
+              <CardBerita
+                key={item.id}
+                id={item.id}
+                judul_berita={item.judul_berita}
+                tanggal_upload={item.tanggal_upload}
+                highlight_berita={item.highlight_berita}
+                konten_gambar={item.konten_gambar}
+              />
+            ))}
           </div>
         </div>
       </div>
