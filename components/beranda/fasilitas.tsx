@@ -12,7 +12,7 @@ interface Facility {
 const Fasilitas: React.FC = () => {
   const facilities: Facility[] = [
     { id: 1, title: "Kantin Putra", imageName: "KANTIN PUTRA.jpg" },
-    { id: 2, title: "Perpustakaan", imageName: "perpustakaan.jpg" },
+    { id: 2, title: "Perpustakaan", imageName: "PERPUSTAKAAN.jpg" },
     { id: 3, title: "Laboratorium", imageName: "LAB KOMPUTER.jpg" },
     { id: 4, title: "Masjid", imageName: "MASJID.jpg" },
     { id: 5, title: "Perumahan Guru", imageName: "PERUMAHAN GURU.jpg" },
