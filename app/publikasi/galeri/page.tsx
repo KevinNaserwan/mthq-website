@@ -5,58 +5,68 @@ import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 import NavbarMenu from "@/components/navbar-menu";
 import Image from "next/image";
+import { useGaleri } from "@/hooks/useGaleri";
 
 export default function Galeri() {
   // State to track the active category
-  const [activeCategory, setActiveCategory] = useState("kegiatan"); // Default active category
+  const [activeCategory, setActiveCategory] = useState("semua"); // Default active category
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-  // Categories data
-  const categories = [
-    { id: "semua", label: "Semua Foto", icon: "/icon/photo.svg" },
-    { id: "kegiatan", label: "Kegiatan Santri", icon: "/icon/kegiatan.svg" },
-    {
-      id: "program",
-      label: "Program Pendidikan",
-      icon: "/icon/program-pendidikan.svg",
-    },
-    { id: "wisuda", label: "Wisuda Akbar", icon: "/icon/wisuda.svg" },
-  ];
+  // Fetch galeri data
+  const { galeri, loading, error, getGaleriByJenis, getGaleriCategories } =
+    useGaleri();
 
-  // Determine image paths based on category
-  const getImagePaths = () => {
-    switch (activeCategory) {
-      case "kegiatan":
-        return [...Array(4)].map(
-          (_, index) => `/image/galeri/1/galeri${index + 1}.png`
-        );
-      case "program":
-        return [...Array(4)].map(
-          (_, index) => `/image/galeri/2/galeri${index + 1}.png`
-        );
-      case "wisuda":
-        return [...Array(4)].map(
-          (_, index) => `/image/galeri/3/galeri${index + 1}.png`
-        );
-      case "semua":
-        return [
-          ...[...Array(4)].map(
-            (_, index) => `/image/galeri/1/galeri${index + 1}.png`
-          ),
-          ...[...Array(4)].map(
-            (_, index) => `/image/galeri/2/galeri${index + 1}.png`
-          ),
-          ...[...Array(4)].map(
-            (_, index) => `/image/galeri/3/galeri${index + 1}.png`
-          ),
-        ];
+  // Get available categories from API
+  const apiCategories = getGaleriCategories();
+
+  // Categories data with icons mapping
+  const getCategoryIcon = (jenisGaleri: string) => {
+    switch (jenisGaleri) {
+      case "kegiatan_santri":
+        return "/icon/kegiatan.svg";
+      case "program_pendidikan":
+        return "/icon/program-pendidikan.svg";
+      case "wisuda_akbar":
+        return "/icon/wisuda.svg";
       default:
-        return [];
+        return "/icon/photo.svg";
     }
   };
 
-  // Get image paths for the current category
-  const imagePaths = getImagePaths();
+  const getCategoryLabel = (jenisGaleri: string) => {
+    switch (jenisGaleri) {
+      case "kegiatan_santri":
+        return "Kegiatan Santri";
+      case "program_pendidikan":
+        return "Program Pendidikan";
+      case "wisuda_akbar":
+        return "Wisuda Akbar";
+      default:
+        return jenisGaleri;
+    }
+  };
+
+  // Create categories array including "semua" option
+  const categories = [
+    { id: "semua", label: "Semua Foto", icon: "/icon/photo.svg" },
+    ...apiCategories.map((jenis) => ({
+      id: jenis,
+      label: getCategoryLabel(jenis),
+      icon: getCategoryIcon(jenis),
+    })),
+  ];
+
+  // Get images based on active category
+  const getImagesForCategory = () => {
+    if (activeCategory === "semua") {
+      return galeri.filter((item) => item.tipe_konten === "gambar");
+    }
+    return getGaleriByJenis(activeCategory).filter(
+      (item) => item.tipe_konten === "gambar"
+    );
+  };
+
+  const currentImages = getImagesForCategory();
 
   // Handler for category click
   const handleCategoryClick = (categoryId: string) => {
@@ -68,6 +78,44 @@ export default function Galeri() {
   const activeCategoryLabel =
     categories.find((category) => category.id === activeCategory)?.label ||
     "Pilih Kategori";
+
+  if (loading) {
+    return (
+      <div className="w-full min-h-screen overflow-x-hidden">
+        <Navbar />
+        <NavbarMenu
+          title="Galeri MTHQ"
+          mainCategory="Publikasi"
+          currentPage="Galeri"
+        />
+        <div className="lg:px-36 lg:py-24 lg:bg-white">
+          <div className="flex justify-center items-center h-64">
+            <p>Loading galeri...</p>
+          </div>
+        </div>
+        <Footer />
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="w-full min-h-screen overflow-x-hidden">
+        <Navbar />
+        <NavbarMenu
+          title="Galeri MTHQ"
+          mainCategory="Publikasi"
+          currentPage="Galeri"
+        />
+        <div className="lg:px-36 lg:py-24 lg:bg-white">
+          <div className="flex justify-center items-center h-64">
+            <p className="text-red-500">Error: {error}</p>
+          </div>
+        </div>
+        <Footer />
+      </div>
+    );
+  }
 
   return (
     <div className="w-full min-h-screen overflow-x-hidden">
@@ -188,17 +236,31 @@ export default function Galeri() {
         {/* Gallery Grid */}
         <div className="lg:grid grid-flow-col lg:mx-0 mx-4 bg-[#E6E6E6] rounded-br-lg rounded-bl-lg mb-6 pt-8 pb-6 relative">
           <div className="flex flex-wrap justify-center gap-4 px-8 max-h-[680px] overflow-y-auto">
-            {imagePaths.map((imagePath, index) => (
-              <div key={`image-${index}`} className="flex-shrink-0">
-                <Image
-                  alt={`Gallery image ${index + 1}`}
-                  src={imagePath}
-                  width={230}
-                  height={130}
-                  className="object-cover"
-                />
+            {currentImages.length > 0 ? (
+              currentImages.map((image, index) => (
+                <div
+                  key={`image-${image.id}`}
+                  className="flex-shrink-0 w-[230px] h-[150px] overflow-hidden rounded-lg bg-white"
+                >
+                  <Image
+                    alt={image.nama_attribute || `Gallery image ${index + 1}`}
+                    src={`https://backend.mthq-bangka.site/storage/${image.konten_gambar.replace(
+                      /\\\//g,
+                      "/"
+                    )}`}
+                    width={230}
+                    height={150}
+                    className="object-cover w-full h-full"
+                  />
+                </div>
+              ))
+            ) : (
+              <div className="flex justify-center items-center h-32">
+                <p className="text-gray-500">
+                  Tidak ada gambar untuk kategori ini
+                </p>
               </div>
-            ))}
+            )}
           </div>
         </div>
       </div>
