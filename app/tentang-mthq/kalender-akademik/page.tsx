@@ -131,7 +131,7 @@ export default function KalenderAkademik() {
           </div>
           <div className="mt-8 flex justify-center">
             <a
-              href="https://backend.mthq-bangka.site/api/kalender-akademik/1/download"
+              href="https://backend.mthq-bangka.site/api/kalender-akademik/2/download"
               target="_blank"
               rel="noopener noreferrer"
               download
