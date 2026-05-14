@@ -65,7 +65,7 @@ export default function BeritaDetail() {
         {gambarList.length === 1 && gambarList[0] && (
           <div className="mb-6">
             <Image
-              src={`https://backend.mthq-bangka.site/storage/${gambarList[0].konten_gambar}`}
+              src={`https://backend.mthq-bangka.com/storage/${gambarList[0].konten_gambar}`}
               alt={gambarList[0].nama_attribute || "Gambar Berita"}
               width={800}
               height={400}
@@ -76,7 +76,7 @@ export default function BeritaDetail() {
         {gambarList.length > 1 && gambarKedua && (
           <div className="mb-6">
             <Image
-              src={`https://backend.mthq-bangka.site/storage/${gambarKedua.konten_gambar}`}
+              src={`https://backend.mthq-bangka.com/storage/${gambarKedua.konten_gambar}`}
               alt={gambarKedua.nama_attribute || "Gambar Berita"}
               width={800}
               height={400}
@@ -93,7 +93,7 @@ export default function BeritaDetail() {
               {item.konten_gambar && (
                 <div className="mb-2">
                   <Image
-                    src={`https://backend.mthq-bangka.site/storage/${item.konten_gambar}`}
+                    src={`https://backend.mthq-bangka.com/storage/${item.konten_gambar}`}
                     alt={item.nama_attribute || "Gambar Berita"}
                     width={800}
                     height={400}

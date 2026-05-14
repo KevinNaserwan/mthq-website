@@ -21,7 +21,7 @@ export default function CardBerita({
   ...props
 }: CardBeritaProps) {
   const imageUrl = konten_gambar
-    ? `https://backend.mthq-bangka.site/storage/${konten_gambar}`
+    ? `https://backend.mthq-bangka.com/storage/${konten_gambar}`
     : "/image/jumbotron/2.jpeg";
 
   return (

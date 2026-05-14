@@ -244,7 +244,7 @@ export default function Galeri() {
                 >
                   <Image
                     alt={image.nama_attribute || `Gallery image ${index + 1}`}
-                    src={`https://backend.mthq-bangka.site/storage/${image.konten_gambar.replace(
+                    src={`https://backend.mthq-bangka.com/storage/${image.konten_gambar.replace(
                       /\\\//g,
                       "/"
                     )}`}
