@@ -2,7 +2,17 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
-    domains: ["backend.mthq-bangka.com"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "backend.mthq-bangka.com",
+      },
+      {
+        protocol: "http",
+        hostname: "localhost",
+        port: "8000",
+      },
+    ],
   },
 };
 

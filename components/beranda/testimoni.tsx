@@ -30,7 +30,7 @@ export default function Testimoni() {
         if (!grouped[item.section_id]) grouped[item.section_id] = {};
         if (attr === "gambartestimoni")
           grouped[item.section_id].image = item.konten_gambar
-            ? `https://backend.mthq-bangka.com/storage/${item.konten_gambar}`
+            ? `${process.env.NEXT_PUBLIC_BACKEND_URL || "https://backend.mthq-bangka.com"}/storage/${item.konten_gambar}`
             : "/image/testimoni/1.png";
         if (attr === "namatestimoni")
           grouped[item.section_id].name = item.konten_teks || "";

@@ -25,14 +25,10 @@ export default function BeritaDetail() {
       .finally(() => setLoading(false));
   }, [id]);
 
-  // Filter detail sesuai id
-  const filteredDetail = detail.filter((item) => item.list_berita_id === id);
+  const filteredDetail = detail.filter((item) => String(item.list_berita_id) === id);
   const beritaUtama = filteredDetail[0];
-
-  // Ambil semua gambar dalam urutan
-  const gambarList = filteredDetail.filter((item) => item.konten_gambar);
-  const gambarKedua = gambarList[1];
-  const gambarKeduaId = gambarKedua?.id;
+  const gambarBloks = filteredDetail.filter((item) => item.konten_gambar);
+  const teksBloks = filteredDetail.filter((item) => item.konten_teks);
 
   if (loading) return <div className="min-h-screen">Loading...</div>;
   if (error) return <div className="min-h-screen">{error}</div>;
@@ -61,52 +57,22 @@ export default function BeritaDetail() {
             day: "2-digit",
           })}
         </div>
-        {/* Gambar kedua di bawah tanggal jika ada dua atau lebih, jika hanya satu gambar tetap di bawah tanggal */}
-        {gambarList.length === 1 && gambarList[0] && (
-          <div className="mb-6">
+        {gambarBloks.map((item) => (
+          <div key={item.id} className="mb-6">
             <Image
-              src={`https://backend.mthq-bangka.com/storage/${gambarList[0].konten_gambar}`}
-              alt={gambarList[0].nama_attribute || "Gambar Berita"}
+              src={`${process.env.NEXT_PUBLIC_BACKEND_URL || "https://backend.mthq-bangka.com"}/storage/${item.konten_gambar}`}
+              alt={item.nama_attribute || "Gambar Berita"}
               width={800}
               height={400}
               className="rounded-lg w-full h-auto"
             />
           </div>
-        )}
-        {gambarList.length > 1 && gambarKedua && (
-          <div className="mb-6">
-            <Image
-              src={`https://backend.mthq-bangka.com/storage/${gambarKedua.konten_gambar}`}
-              alt={gambarKedua.nama_attribute || "Gambar Berita"}
-              width={800}
-              height={400}
-              className="rounded-lg w-full h-auto"
-            />
+        ))}
+        {teksBloks.map((item) => (
+          <div key={item.id} className="mb-6">
+            <p className="text-lg leading-relaxed">{item.konten_teks}</p>
           </div>
-        )}
-        {/* Render paragraf dan gambar lain di antara paragraf, skip gambar kedua jika ada lebih dari satu */}
-        {filteredDetail.map((item) => {
-          // Jika gambar kedua, skip karena sudah ditampilkan di atas
-          if (gambarList.length > 1 && item.id === gambarKeduaId) return null;
-          return (
-            <div key={item.id} className="mb-6">
-              {item.konten_gambar && (
-                <div className="mb-2">
-                  <Image
-                    src={`https://backend.mthq-bangka.com/storage/${item.konten_gambar}`}
-                    alt={item.nama_attribute || "Gambar Berita"}
-                    width={800}
-                    height={400}
-                    className="rounded-lg w-full h-auto"
-                  />
-                </div>
-              )}
-              {item.konten_teks && (
-                <p className="text-lg leading-relaxed">{item.konten_teks}</p>
-              )}
-            </div>
-          );
-        })}
+        ))}
       </div>
       <Footer />
     </div>

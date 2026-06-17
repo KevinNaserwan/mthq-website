@@ -1,7 +1,5 @@
 import axios from "axios";
 
-// process.env.NEXT_PUBLIC_BASE_URL;
-
 export const axiosInstance = axios.create({
-  baseURL: "https://backend.mthq-bangka.com",
+  baseURL: process.env.NEXT_PUBLIC_BACKEND_URL || "https://backend.mthq-bangka.com",
 });
